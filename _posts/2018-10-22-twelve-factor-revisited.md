@@ -2,6 +2,8 @@
 title: 12 factor apps revisited
 author: Cameron Gray
 twitter: camerondgray
+tags: [12 factor app, docker]
+description: Deploying docker applications the 12 factor way
 ---
 
 It’s been over three years since we published [this post on twelve factor apps](https://convox.com/blog/modern-twelve-factor-apps-with-docker/).  In that time [12 factor](https://12factor.net/) has continued to be the dominant philosophy for building scalable, secure, and maintainable web applications. It has even been applied to the rising popularity of [serverless applications](https://aws.amazon.com/blogs/compute/applying-the-twelve-factor-app-methodology-to-serverless-applications/)

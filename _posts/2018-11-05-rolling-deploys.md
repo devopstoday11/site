@@ -2,6 +2,8 @@
 title: Rolling..Rolling..Rolling Deploys
 author: Cameron Gray
 twitter: camerondgray
+tags: [continuous delivery, continuous integration, continuous deployment]
+description: A practical guide and best practices for continuous deployment using rolling deploys
 ---
 
 We all talk about [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration), [continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery), and [continuous deployment](https://www.agilealliance.org/glossary/continuous-deployment/), but there is often a misconception of what these terms actually mean and what we need to do to facilitate them

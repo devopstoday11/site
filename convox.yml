@@ -3,5 +3,7 @@ services:
     command: _bin/web
     domain: ${HOST}
     environment:
+      - CONSOLE_HOST
       - DEVELOPMENT=false
+      - SEGMENT_TOKEN
     port: 4001

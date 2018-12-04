@@ -4,7 +4,7 @@ title: Convox Console Terms of Use
 
 Last updated May 31, 2016.  You can review changes to these terms at <https://github.com/convox/console-terms/commits/master/terms.md>.
 
-These Convox Console terms of use govern access and use of <https://console.convox.com> (_Convox Console_).  Convox, Inc. operates Convox Console.  You may access and use Convox Console only under these terms.
+These Convox Console terms of use govern access and use of <https://{{ site.console_host }}> (_Convox Console_).  Convox, Inc. operates Convox Console.  You may access and use Convox Console only under these terms.
 
 ## Important Terms
 

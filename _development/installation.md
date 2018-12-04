@@ -41,7 +41,7 @@ Alternatively, on OSX you can also install via Homebrew:
 
 After installing Convox, you'll need to `convox login`:
 
-    $ convox login console.convox.com
+    $ convox login {{ site.console_host }}
     Password: <your Console API key>
     Logged in successfully.
 

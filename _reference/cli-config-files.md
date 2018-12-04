@@ -17,7 +17,7 @@ This file contains a JSON struct in the following format:
 ```
 $ cat ~/.convox/auth 
 {
-  "console.convox.com": "your-convox-console-api-key",
+  "{{ site.console_host }}": "your-convox-console-api-key",
   "your-rack-host.us-east-1.elb.amazonaws.com": "rack-api-key",
 }
 ```
@@ -28,7 +28,7 @@ Note: When you install a Rack via `convox rack install`, you are logged in autom
 
 This file contains the hostname of the Rack you're currently logged into.
 
-If you're logged into `console.convox.com`, you can `convox switch` between all the Racks you've added or installed via Console.
+If you're logged into `{{ site.console_host }}`, you can `convox switch` between all the Racks you've added or installed via Console.
 
 ### `~/.convox/rack`
 
@@ -51,7 +51,7 @@ Count    3
 Type     t2.small
 ```
 
-If you're logged into console.convox.com, you can change the active Rack by running `convox switch` or by simply overwriting the contents of this file:
+If you're logged into {{ site.console_host }}, you can change the active Rack by running `convox switch` or by simply overwriting the contents of this file:
 
 ```
 $ echo 'personal/legit' > ~/.convox/rack 

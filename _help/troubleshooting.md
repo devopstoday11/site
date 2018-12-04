@@ -63,4 +63,4 @@ Some good places to search are:
 If you still need help, feel free to:
 
 - reach out [on Slack](https://invite.convox.com/)
-- open a ticket via the Support section [in the Convox web console](https://console.convox.com/)
+- open a ticket via the Support section [in the Convox web console](https://{{ site.console_host }}/)

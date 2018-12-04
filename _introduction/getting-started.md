@@ -28,9 +28,9 @@ along with numerous other utilities that make building, configuring, scaling and
 
 * [Install the Convox CLI](/docs/installation/) for your platform.
 
-* Next, click the **[Setup](https://console.convox.com/grid/user/welcome)** button then **[Connect the Convox CLI](https://console.convox.com/grid/user/api_key)** to get your API key.
+* Next, click the **[Setup](https://{{ site.console_host }}/grid/user/welcome)** button then **[Connect the Convox CLI](https://{{ site.console_host }}/grid/user/api_key)** to get your API key.
 
-* Finally, use the `convox login` command with your [API key](https://console.convox.com/grid/user/api_key):
+* Finally, use the `convox login` command with your [API key](https://{{ site.console_host }}/grid/user/api_key):
 
 <pre id="login">
 $ convox login
@@ -73,7 +73,7 @@ Once you have had a chance to play around with local development it's time to de
 
 ## Connect an AWS Account
 
-Click the **[Setup](https://console.convox.com/grid/user/welcome)** button then **Connect an AWS account**, and give Convox an AWS [access key](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys). This grants Convox access and permission to help manage resources in your AWS account.
+Click the **[Setup](https://{{ site.console_host }}/grid/user/welcome)** button then **Connect an AWS account**, and give Convox an AWS [access key](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys). This grants Convox access and permission to help manage resources in your AWS account.
 
 See [AWS Integration](/docs/aws-integration) for more details.
 

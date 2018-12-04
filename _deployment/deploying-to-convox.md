@@ -7,7 +7,7 @@ You have a few options for building and deploying your applications to Convox.
 
 ## Automatic Builds
 
-You can easily configure [Console](https://console.convox.com) to build and deploy your application when changes are pushed to your main repository. See [Workflows](/docs/workflows) for more information.
+You can easily configure [Console](https://{{ site.console_host }}) to build and deploy your application when changes are pushed to your main repository. See [Workflows](/docs/workflows) for more information.
 
 ## CLI
 

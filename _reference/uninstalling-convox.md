@@ -34,5 +34,5 @@ Type     t2.small
 <div class="block-callout block-show-callout type-danger" markdown="1">
 ## Removing a Rack
 
-If you simply want to unlink a Rack from Convox without deleting the associated resources, you can do so via the [web console](https://console.convox.com/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
+If you simply want to unlink a Rack from Convox without deleting the associated resources, you can do so via the [web console](https://{{ site.console_host }}/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
 </div>

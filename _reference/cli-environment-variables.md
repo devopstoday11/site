@@ -22,7 +22,7 @@ Defines which Rack `convox` commands should be applied to. Overrides `./.convox/
 
 ## `CONVOX_HOST`
 
-Convox Rack or Console endpoint. If not present, `console.convox.com` is assumed. Overrides [`~/.convox/host`](/docs/cli-config-files/#convoxhost).
+Convox Rack or Console endpoint. If not present, `{{ site.console_host }}` is assumed. Overrides [`~/.convox/host`](/docs/cli-config-files/#convoxhost).
 
 ## `CONVOX_PASSWORD`
 

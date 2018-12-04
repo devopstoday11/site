@@ -20,9 +20,9 @@ You'll also need to enable the CircleCI build server to authenticate with your R
 
 ### Authenticating with Console deploy keys
 
-If you use [Console](https://console.convox.com/) to manage access to your Racks, you'll need to set the following environment variables in CircleCI:
+If you use [Console](https://{{ site.console_host }}/) to manage access to your Racks, you'll need to set the following environment variables in CircleCI:
 
-    CONVOX_HOST=console.convox.com
+    CONVOX_HOST={{ site.console_host }}
     CONVOX_PASSWORD=<deploy key>
 
 For more information, see [deploy keys](/docs/deploy-keys).

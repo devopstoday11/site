@@ -6,7 +6,7 @@ As Convox is in active development, new Rack releases are frequently available. 
 
 ## Updating via Console
 
-After logging into [the Convox Console](https://console.convox.com/), you can see your list of Racks in the Racks section:
+After logging into [the Convox Console](https://{{ site.console_host }}/), you can see your list of Racks in the Racks section:
 
 ![List of Racks](/assets/images/docs/what-is-a-rack/list-of-racks.png)
 

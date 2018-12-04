@@ -8,7 +8,7 @@ Convox always has your security in mind. Below are some of the ways your apps an
 
 Your Convox Rack is installed in your own AWS account. Unlike a multi-tenant PaaS, you never have to worry about other users gaining access to your infrastructure.
 
-[Convox Console](https://console.convox.com) is a multi-tenant management layer that proxies API requests to your Rack and provides team management and workflow tools. Many security measures are baked in such as rollable API keys, programmatic [deploy keys](/docs/deploy-keys), and user roles. However, if you don't want to use the multi-tenant Console you can run your own! [Contact us](mailto:support@convox.com) for information about plans and pricing.
+[Convox Console](https://{{ site.console_host }}) is a multi-tenant management layer that proxies API requests to your Rack and provides team management and workflow tools. Many security measures are baked in such as rollable API keys, programmatic [deploy keys](/docs/deploy-keys), and user roles. However, if you don't want to use the multi-tenant Console you can run your own! [Contact us](mailto:support@convox.com) for information about plans and pricing.
 
 ## AWS Permissions
 

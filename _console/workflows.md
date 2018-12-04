@@ -2,7 +2,7 @@
 title: "Workflows"
 ---
 
-[Convox Console](https://console.convox.com) supports the creation of Workflows. A Workflow is a list of tasks executed in response to a trigger. You can use Workflows to build automation--like deploying when you push to GitHub--into an organization.
+[Convox Console](https://{{ site.console_host }}) supports the creation of Workflows. A Workflow is a list of tasks executed in response to a trigger. You can use Workflows to build automation--like deploying when you push to GitHub--into an organization.
 
 1. [Creating a Workflow](#creating-a-workflow)
   - [Defining the Trigger](#defining-the-trigger)
@@ -13,7 +13,7 @@ title: "Workflows"
 
 ## Creating a Workflow
 
-In [Console](https://console.convox.com/), click the Workflows tab. Click the "Create Workflow" button to get started.
+In [Console](https://{{ site.console_host }}/), click the Workflows tab. Click the "Create Workflow" button to get started.
 
 ![](/assets/images/docs/workflows/tab.png)
 

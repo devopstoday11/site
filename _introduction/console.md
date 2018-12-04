@@ -3,7 +3,7 @@ title: "Convox Console"
 order: 300
 ---
 
-Convox offers the [Console](https://console.convox.com) service to manage and monitor your Racks. Console allows you to install new Racks, decide who has access to them, and integrate them with other services such as GitLab or Slack.
+Convox offers the [Console](https://{{ site.console_host }}) service to manage and monitor your Racks. Console allows you to install new Racks, decide who has access to them, and integrate them with other services such as GitLab or Slack.
 
 ## How it works
 

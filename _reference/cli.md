@@ -15,7 +15,7 @@ You can easily update the CLI to get bugfixes and features:
 
     $ convox --version
     client: 20160617165137
-    server: 20160615213630 (console.convox.com)
+    server: 20160615213630 ({{ site.console_host }})
 
 ## Overriding App Defaults
 
@@ -102,7 +102,7 @@ You can set a default Rack name in an app's repository. This will take precedenc
 
 All of the above tools control what `Rack` header is sent in API commands. You can also control this explicitly when using the API:
 
-    $ curl -u :$API_KEY -H "Rack: personal/staging" https://console.convox.com/apps
+    $ curl -u :$API_KEY -H "Rack: personal/staging" https://{{ site.console_host }}/apps
     [
       {
         "name": "httpd",

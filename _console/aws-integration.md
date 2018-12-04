@@ -12,7 +12,7 @@ There are a few ways to create this role and policy.
 
 ## AWS Integration Quickstart
 
-1. Log into [Console](https://console.convox.com/)
+1. Log into [Console](https://{{ site.console_host }}/)
 2. Click the **Integrations** menu button
 3. Click the **Enable** button for the AWS provider
 4. Drag a `credentials.csv` file or enter your Access Key ID and Secret Access Key into the access key form and click **Integrate AWS**
@@ -57,7 +57,7 @@ After the "AWS Integration Created" message, you can delete the `convox-setup` u
 
 If you don't want to provide an Access Key to Convox, you can set up the role with the [AWS CLI](https://aws.amazon.com/cli/) that is configured with your administrator Access Key.
 
-1. Log into [Console](https://console.convox.com/)
+1. Log into [Console](https://{{ site.console_host }}/)
 2. Click the **Integrations** menu button
 3. Click the **Enable** button for the AWS provider
 4. Copy the commands from the **AWS CLI Authorization** section into your terminal
@@ -87,7 +87,7 @@ You can review the IAM Role and Trust Relationship on your own.
 
 At any time you can delete the `convox/ConvoxRole-$ID` role and `convox/ConvoxPolicy` policy. If you do this, you will not be able to install new Racks, but it will not affect any running apps.
 
-1. Log into [Console](https://console.convox.com/)
+1. Log into [Console](https://{{ site.console_host }}/)
 2. Click the **Integrations** menu button
 3. Click the **Disable** button for the AWS provider
 

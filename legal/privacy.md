@@ -4,9 +4,9 @@ title: Convox Console Privacy Policy
 
 Last updated May 25, 2016
 
-This privacy policy describes the information that Convox, Inc. collects about users of Convox Console (<https://console.convox.com>), how it collects that information, and how it uses and shares that information.
+This privacy policy describes the information that Convox, Inc. collects about users of Convox Console (<https://{{ site.console_host }}>), how it collects that information, and how it uses and shares that information.
 
-Convox may change this policy by posting a dated revision to <https://console.convox.com/privacy>.
+Convox may change this policy by posting a dated revision to <https://{{ site.console_host }}/privacy>.
 
 You can review changes to this policy at <https://github.com/convox/console-terms/commits/master/privacy.md>.
 

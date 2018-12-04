@@ -40,18 +40,3 @@ $(function() {
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/jquery.easing.1.3.min.js"></script>
 <script src="/assets/js/classie.js"></script>
-
-{% if jekyll.environment != 'development' %}
-  {% include facebook.html %}
-  {% include intercom.html %}
-  {% include segment.html %}
-
-  <script>
-    $('.js-intercom-show').click(function () {
-      Intercom('show');
-      return false;
-    });
-
-    analytics.trackLink($('a.cta'), function(e) { return "clicked " + e.id })
-	</script>
-{% endif %}

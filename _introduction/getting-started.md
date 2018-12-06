@@ -5,7 +5,7 @@ order: 400
 
 Getting started with Convox is easy. The instructions below guide you through:
 
-* [Signing up for a Convox account](https://convox.com/signup)
+* [Signing up for a Convox account](https://{{ site.console_host }}/grid/signup)
 * Install Convox
 * Run your first application locally
 * Connect your AWS account
@@ -15,7 +15,7 @@ This guide takes around 30 minutes to go from zero to your first production depl
 
 ## Sign Up
 
-First, if you haven't already, you will need to [sign up for Convox](https://convox.com/signup).
+First, if you haven't already, you will need to [sign up for Convox](https://{{ site.console_host }}/grid/signup).
 
 ## Install the Convox CLI
 
@@ -46,30 +46,30 @@ If you already have a [dockerized](https://docs.docker.com/engine/examples/) app
 * If you are starting from scratch, clone one of our [demo applications](https://github.com/convox-examples) to get started
 
 ## Run your application locally
-If your application is ready to go, then running locally is as easy as typing `convox start` 
+If your application is ready to go, then running locally is as easy as typing `convox start`
 Once your application is up and running you just need to point your browser at it.
 
 
 Here is an example using one of our sample apps:
-    
+
     $ git clone https://github.com/convox-examples/rails
     Cloning into 'rails'...
     $ cd rails
-    $ convox start 
+    $ convox start
     build   | uploading source
     build   | starting build
     build   | Building: ...
-    
+
  Once your build completes, you can open a new terminal and see what services you have running locally with `convox services`
-    
+
     $ convox services
-    SERVICE  DOMAIN            PORTS           
+    SERVICE  DOMAIN            PORTS
     web      web.rails.convox  80:3000 443:3000
-  
+
 Now if you point your browser at `https://web.rails.convox` you can see your first app in action!
 
 Once you have had a chance to play around with local development it's time to deploy to production! First you will need to connect your AWS account
-    
+
 
 ## Connect an AWS Account
 
@@ -92,18 +92,18 @@ In this case we will use the rails example app we cloned for local development
 
     $ git clone https://github.com/convox-examples/rails
     $ cd rails
-    
+
 #### Switch to your production Rack
 Assuming in the step above you created a Rack called `production` we need to point your Convox CLI at that Rack instead of your local Rack so your commands are executed against the staging Rack.
 
     $ convox racks
-    NAME                  STATUS     
-    local/convox          running    
-    MyCompany/production  running   
-    
+    NAME                  STATUS
+    local/convox          running
+    MyCompany/production  running
+
     $ convox switch MyCompany/production
     Switched to MyCompany/production
-    
+
 Don't forget when you want to go back to local development to switch racks with `convox switch local`
 
 #### Create an app in your Rack
@@ -111,7 +111,7 @@ Don't forget when you want to go back to local development to switch racks with 
 Before deploying, create a new app in your Rack.
 
     $ convox apps create <name>
-    
+
 Wait for the underlying components to be created:
 
     $ convox apps wait
@@ -119,11 +119,11 @@ Wait for the underlying components to be created:
 Deploy the application
 
     $ convox deploy
-  
+
 By default convox assumes your application is the same name as the current directory. If you gave your app a custom name you will need to specify the app name using `-a <app_name>`
 
 For example
-    
+
     my-laptop $ cd rails
     my-laptop:rails $ convox apps create demoapp
     my-laptop:rails $ convox deploy -a demoapp

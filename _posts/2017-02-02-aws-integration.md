@@ -15,7 +15,7 @@ To this end, we’re happy to announce our **AWS Integration**. Deploying your a
 
 ## Setup
 
-[Sign up for Convox](https://convox.com/signup). Follow the interactive setup checklist to create your first organization and to integrate your AWS account.
+[Sign up for Convox](https://{{ site.console_host }}/grid/signup). Follow the interactive setup checklist to create your first organization and to integrate your AWS account.
 
 Copy and paste an AWS access key into the form. If you are more comfortable using the [AWS Command Line Interface](https://aws.amazon.com/cli/), you can copy and paste a few commands into your terminal and paste the resulting IAM role ID into the form.
 
@@ -35,7 +35,7 @@ Click the “Add Rack” button, enter “production” in the name, then click 
 
 A few more clicks and you can use the **AWS Integration** in combination with the **Slack Integration** to offer devops visibility for your team.
 
-Click the “Integrations” button and enable the Slack integration to connect your team chat room. 
+Click the “Integrations” button and enable the Slack integration to connect your team chat room.
 
 You’ll get Slack messages for key AWS operations like instance security updates and app deploys and rollbacks.
 

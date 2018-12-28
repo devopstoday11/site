@@ -3,7 +3,7 @@ services:
     command: _bin/web
     domain: ${HOST}
     environment:
-      - CONSOLE_HOST
+      - CONSOLE_HOST=console-staging.convox.com
       - DEVELOPMENT=false
-      - SEGMENT_TOKEN
+      - SEGMENT_TOKEN=foo
     port: 4001

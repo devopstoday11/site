@@ -1,6 +1,8 @@
 ---
-title: Comparison
+title: Convox Comparison
 layout: base
+tags: [Elastic Beanstalk alternative, nanobox alternative, convox compare, heroku alternative]
+description: Compare Convox to EC2, Elastic Beanstalk, Kops, Nanonbox and Heroku
 ---
 
 <header class="medium">
@@ -31,11 +33,11 @@ layout: base
             <tr>
               <th></th>
               <th>Convox</th>
-              <th>AWS <br>(IaaS)</th>
-              <th>CloudFoundry <br>(OSS PaaS)</th>
-              <th>Docker Swarm <br>(Orchestration)</th>
-              <th>Google Container <br>Engine (CaaS)</th>
-              <th>Heroku <br>(PaaS)</th>
+              <th>AWS EC2</th>
+              <th>Elastic Beanstalk</th>
+              <th>Kops</th>
+              <th>Nanobox</th>
+              <th>Heroku</th>
             </tr>
 
             <tr class="category">
@@ -45,27 +47,36 @@ layout: base
               <td class="text-blue">Open-Source</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon no" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Single Tenant</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
             <tr>
-              <td class="text-blue">Multi-Platform</td>
+              <td class="text-blue">Multi-Cloud</td>
               <td class="text-center"><span class="convox icon no" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon no" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Docker Native</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
 
@@ -76,120 +87,157 @@ layout: base
               <td class="text-blue">Private Networking</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Secrets Management</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Audit Log</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Role based access control</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
             </tr>
 
             <tr class="category">
-              <td colspan="7">Build / Release</td>
+              <td colspan="7">Develop / Build / Release</td>
             </tr>
             <tr>
-              <td class="text-blue">Build Service</td>
+              <td class="text-blue">Local Development Environment</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="aws    icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">CI/CD</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon diy" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Image Registry</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Zero Downtime Deploys</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
             </tr>
 
             <tr class="category">
-              <td colspan="7">Runtime</td>
-            </tr>
-            <tr>
-              <td class="text-blue">Docker Engine</td>
-              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon no" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+              <td colspan="7">Application Management</td>
             </tr>
             <tr>
               <td class="text-blue">One-Off Consoles</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Scheduled Tasks</td>
+            <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+            <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+            <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+            <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+            <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+            <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Autoscaling</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Resource Provisioning</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon add" aria-hidden="true"></td>
             </tr>
 
+
             <tr class="category">
-              <td colspan="7">Load Balancing</td>
+              <td colspan="7">Networking</td>
             </tr>
             <tr>
               <td class="text-blue">HTTP / HTTPS</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
             </tr>
             <tr>
-              <td class="text-blue">TCP / TLS</td>
+              <td class="text-blue">SSL Certificate Generation</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon diy" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Resource Proxying</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
             <tr>
-              <td class="text-blue">Private</td>
+              <td class="text-blue">Internal Private Applications</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
 
@@ -200,28 +248,37 @@ layout: base
               <td class="text-blue">Ephemeral Disks</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Shared File System</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Managed Databases</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon add" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Shared Document Store</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon diy" aria-hidden="true"></td>
             </tr>
 
             <tr class="category">
@@ -231,28 +288,115 @@ layout: base
               <td class="text-blue">Log Aggregation</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
             </tr>
             <tr>
               <td class="text-blue">Log Archive/Search</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="heroku icon add" aria-hidden="true"></td>
             </tr>
             <tr>
-              <td class="text-blue">App Metrics</td>
+              <td class="text-blue">Application Metrics</td>
               <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
               <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
-              <td class="text-center"><span class="cf     icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="docker icon add" aria-hidden="true"></td>
-              <td class="text-center"><span class="gke    icon yes" aria-hidden="true"></td>
-              <td class="text-center"><span class="heroku icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon add" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Host Metrics</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr class="category">
+              <td colspan="7">Cost</td>
+            </tr>
+            <tr>
+              <td class="text-blue">Spot Instances</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Cost Optimization</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Use AWS credits</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Pay for AWS resources directly</td>
+              <td class="text-center"><span class="convox icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon yes" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr class="category">
+              <td colspan="7">Compliance</td>
+            </tr>
+            <tr>
+              <td class="text-blue">Self Hosting</td>
+              <td class="text-center"><span class="convox icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">PCI</td>
+              <td class="text-center"><span class="convox icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon add" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">HIPAA</td>
+              <td class="text-center"><span class="convox icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon add" aria-hidden="true"></td>
+            </tr>
+            <tr>
+              <td class="text-blue">Data Residency Control</td>
+              <td class="text-center"><span class="convox icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="aws    icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="ebs     icon no" aria-hidden="true"></td>
+              <td class="text-center"><span class="kops icon diy" aria-hidden="true"></td>
+              <td class="text-center"><span class="nano    icon add" aria-hidden="true"></td>
+              <td class="text-center"><span class="heroku icon no" aria-hidden="true"></td>
             </tr>
           </table>
         </div>

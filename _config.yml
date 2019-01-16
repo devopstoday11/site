@@ -10,74 +10,12 @@ permalink: /blog/:title/
 description: Convox is the easiest way to deploy your application to the cloud
 
 collections:
-  introduction:
-    title: Introduction
-    output: true
-    permalink: /docs/:name/
-  deployment:
-    title: Deployment
-    output: true
-    permalink: /docs/:name/
-  development:
-    title: Development
-    output: true
-    permalink: /docs/:name/
-  management:
-    title: Management
-    output: true
-    permalink: /docs/:name/
-  monitoring:
-    title: Monitoring
-    output: true
-    permalink: /docs/:name/
-  resources:
-    title: Resources
-    output: true
-    permalink: /docs/:name/
-  integrations:
-    title: Integrations
-    output: true
-    permalink: /docs/:name/
-  console:
-    title: Console
-    output: true
-    permalink: /docs/:name/
-  gen1:
-    title: Generation 1
-    output: true
-    permalink: /docs/gen1/:name/
-  reference:
-    title: Reference
-    output: true
-    permalink: /docs/:name/
-  help:
-    title: Help
-    output: true
-    permalink: /docs/:name/
-  guide:
-    output: true
 
 defaults:
-  - scope:
-      path: ""
-    values:
-      layout: main
   - scope:
       path: cases
     values:
       layout: cases
-  - scope:
-      path: pricing
-    values:
-      layout: pricing
-  - scope:
-      path: docs
-    values:
-      layout: docs
-  - scope:
-      path: docs/gen1
-    values:
-      layout: gen1
   - scope:
       path: jobs
     values:
@@ -91,16 +29,8 @@ defaults:
     values:
       layout: post
   - scope:
-      path: team
+      path: pricing
     values:
-      layout: team
-  - scope:
-      path: guide
-    values:
-      layout: guide
-
-algolia:
-  application_id: '2VBKDVKUPC'
-  index_name:     'convox'
+      layout: pricing
 
 exclude: [vendor]

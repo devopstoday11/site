@@ -32,5 +32,9 @@ defaults:
       path: pricing
     values:
       layout: pricing
+  - scope:
+      path: guide
+    values:
+      layout: guide
 
 exclude: [vendor]

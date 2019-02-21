@@ -6,7 +6,7 @@ tags: [Heroku, Convox, Django, AWS, ECS, Migrate from heroku to AWS, Django AWS]
 description: How to migrate a Django application from Heroku to AWS ECS using Convox
 ---
 
-At Convox we have had many customers make the switch from Heroku. Some want to significantly lower their hosting costs. Some want more control over their environment. Some want to make use of the greater AWS ecosystem. Many of our Enterprise clients make the switch because the Convox [Self-hosted Console](https://convox.com/enterprise) which makes it much easier for them to achieve PCI or HIPAA compliance. Whatever the reason, we hope to make the process as easy as possible. We have a [Heroku Migration Guide](https://convox.com/guide/heroku) that you can refer to, but for this post I will walk you through migrating a simple Django application from Heroku to the Convox platform running on ECS.
+At Convox we have had many customers make the switch from Heroku. Some want to significantly lower their hosting costs. Some want more control over their environment. Some want to make use of the greater AWS ecosystem. Many of our Enterprise clients make the switch because the Convox [Self-hosted Console](https://convox.com/enterprise) which makes it much easier for them to achieve PCI or HIPAA compliance. Whatever the reason, we hope to make the process as easy as possible. We have a [Heroku Migration Guide](https://docs.convox.com/migration/heroku) that you can refer to, but for this post I will walk you through migrating a simple Django application from Heroku to the Convox platform running on ECS.
 
 <!--more-->
 

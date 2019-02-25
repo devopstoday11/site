@@ -12,7 +12,7 @@ The `convox install` command configures and integrates the latest and best AWS s
 
 Then, the `convox deploy` command can put any [12-factor](http://12factor.net/) or Docker application onto AWS and on the Internet. The Convox build and release API and private Docker registry coordinate making the images and containers and load balancers. Again the tough parts of integrating these components are already solved.
 
-Convox is open-source, available right now, and free to use. [Get started](http://convox.com/docs)!
+Convox is open-source, available right now, and free to use. [Get started](https://convox.com/signup)!
 
 ## Why Convox?
 

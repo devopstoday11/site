@@ -4,7 +4,7 @@ author: Matt Manning
 twitter: mattmanning
 ---
 
-We are proud to announce the latest addition to the Convox platform: [Grid](https://grid.convox.com).
+We are proud to announce the latest addition to the Convox platform: [Grid](https://console.convox.com).
 
 In August we launched [Convox Rack](http://convox.com/docs/what-is-a-rack/) which installs a rock-solid, private PaaS into your own AWS account minutes. The response to Rack has been thrilling. People all over the world are using it to deploy and scale their applications. Rack is a powerful tool for sure, but a great platform is about more than just managing apps. It's also about managing teams and workflows. Enter Grid.
 
@@ -28,7 +28,7 @@ Rack sharing is a free feature of Grid. We have many plans for enhancements such
 
 Continuous integration / continuous delivery workflows are very popular, and we at Convox believe that you should never do something manually when it can be automated. Grid works with GitHub to make these kinds of workflows easy to set up.
 
-You can [sign up to Grid](https://{{ site.console_host }}/grid/signup) using your Github account or [link your existing Grid account to GitHub](https://grid.convox.com/grid/user/integrations). Once you're linked you can easily add GitHub webhooks to any of your Convox apps.
+You can [sign up to Grid](https://{{ site.console_host }}/grid/signup) using your Github account or [link your existing Grid account to GitHub](https://docs.convox.com/console/integrations). Once you're linked you can easily add GitHub webhooks to any of your Convox apps.
 
 Webhooks can trigger automatic builds and deployments to your Convox app when you push Code to master on GitHub. We're working on more triggers -- such as pushes to branches and commit status changes -- that will enable even more powerful CI workflows, so stay tuned.
 

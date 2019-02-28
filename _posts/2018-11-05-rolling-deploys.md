@@ -78,7 +78,7 @@ At Convox, we use a rolling deployment strategy to promote new releases of appli
     * Periodically delete old packages from your CDN origin but always keep the latest few versions around for smooth rollbacks.
     
 #### Health checks:
-* Create a custom endpoint for your [health check](https://docs.convox.com/deployment/health-checks) that ensures your application is initialized correctly and critical aspects, such as database connectivity, are functioning.
+* Create a custom endpoint for your [health check](https://docs.convox.com/application/health-checks) that ensures your application is initialized correctly and critical aspects, such as database connectivity, are functioning.
 
 * Keep in mind that your health check is going to be hit likely every few seconds on every server so you also want to make sure that your health check endpoint does not cause any load on your system as a whole.
 

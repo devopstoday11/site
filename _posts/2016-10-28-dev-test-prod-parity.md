@@ -136,7 +136,7 @@ That effort we put in before is paying off big time. There is **little to no con
 
 If the "Dockerized" app runs on a Docker for Mac environment with a single command, it will certainly run on any test service that supports Docker. There are many:
 
-* CircleCI — [Continuous Integration w/ Docker](https://circleci.com/docs/docker/)
+* CircleCI — [Continuous Integration w/ Docker](https://circleci.com/docs/2.0/building-docker-images/)
 
 * TravisCI — [Using Docker-Compose in Builds](https://docs.travis-ci.com/user/docker/#Using-Docker-Compose)
 
@@ -158,7 +158,7 @@ AWS has a number of Docker strategies:
 
 * [Convox](https://convox.com/) and [Empire](https://github.com/remind101/empire) open-source platforms
 
-* [Docker for AWS](https://beta.docker.com/docs/aws/)
+* [Docker for AWS](https://docs.docker.com/docker-for-aws/)
 
 Not to mention [Heroku Container Runtime](https://devcenter.heroku.com/articles/container-registry-and-runtime), [Google Container Engine](https://cloud.google.com/container-engine/), [Azure Container Service](https://azure.microsoft.com/en-us/services/container-service/), [Docker Cloud](https://cloud.docker.com/), [Joyent Triton](https://www.joyent.com/triton).
 

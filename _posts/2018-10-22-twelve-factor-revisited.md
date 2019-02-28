@@ -22,7 +22,7 @@ This is one of the most misunderstood factors. The aspect of this that we think 
 
 This rule leads to why we believe containers are the right way to  build apps. A container is explicitly defined and configured. Using Docker features such as [base images](https://docs.docker.com/develop/develop-images/baseimages/) can help you package up and share common dependencies.
 
-Convox takes this principle one step further by introducing the [convox.yml](https://docs.convox.com/reference/convox-yml) manifest which allows you to explicitly define your application including the entire set of services and resources that work together to support it. Paired with a [local rack](https://docs.convox.com/development/running-locally), you can ensure that all your developers have identical development environments and that those environments precisely mirror production. 
+Convox takes this principle one step further by introducing the [convox.yml](https://docs.convox.com/application/convox-yml) manifest which allows you to explicitly define your application including the entire set of services and resources that work together to support it. Paired with a [local rack](https://docs.convox.com/development/running-locally), you can ensure that all your developers have identical development environments and that those environments precisely mirror production. 
 
 With Convox, a new developer on your team simply needs to pull your latest code, and run `convox start` to boot the application and immediately start being productive. 
 
@@ -38,7 +38,7 @@ The benefits of this approach become clear when you think about how in a local d
 
 Convox makes this seamless. When you define a database resource in your [convox.yml](https://docs.convox.com/reference/convox-yml) Convox automatically spins up a container running the requested database when running locally and injects the URL to that resource into the environment. When you deploy your application to production Convox will automatically provision the required database resource on RDS and inject that URL instead.
 
-Convox provides a robust set of [resources](https://docs.convox.com/resources/about-resources), as well as the ability to proxy to [remote resources](https://docs.convox.com/development/remote-resources), for teams with more complex needs.
+Convox provides a robust set of [resources](https://docs.convox.com/application/resources), as well as the ability to proxy to [remote resources](https://docs.convox.com/management/resources), for teams with more complex needs.
 
 ### V. Build, release, run: - Strictly separate build and run stages
 The twelve-factor approach dictates separating a production deploy into the three distinct stages of Build, Release and Run. The critical aspect of these stages is that building a release should be a separate task from running a release. 
@@ -61,12 +61,12 @@ This principle is something that most developers probably don't spend a lot of t
 
 Overall this approach creates a simple, modular application, that is easy to scale and can be easily added as a resources to a larger system if need be. When creating a composite system made up of multiple applications or services, if each part exposes a single URL or port it’s much easier to tie all the pieces together.
 
-With Convox you define what [ports](https://docs.convox.com/deployment/port-mapping) your application listens on in your convox.yml file and Convox will automatically create an [application load balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) including provisioning any required [SSL](https://docs.convox.com/deployment/ssl) certificates so you can ensure your application is secure and only listening on the ports you want it to.
+With Convox you define what [ports](https://docs.convox.com/application/port) your application listens on in your convox.yml file and Convox will automatically create an [application load balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) including provisioning any required [SSL](https://docs.convox.com/deployment/ssl) certificates so you can ensure your application is secure and only listening on the ports you want it to.
 
 ### VIII. Concurrency: - Scale out via the process model
 With your application now composed of dependency-isolated processes that are exposing a single port, it becomes easy to horizontally scale your application by simply adding more copies of each service.
 
-Convox allows you define multiple services in your convox.yml manifest and [scale](https://docs.convox.com/management/scaling) them independently. Convox also makes it easy to setup autoscaling based on metrics such as CPU load or targeted requests per minute.
+Convox allows you define multiple services in your convox.yml manifest and [scale](https://docs.convox.com/deployment/scaling) them independently. Convox also makes it easy to setup autoscaling based on metrics such as CPU load or targeted requests per minute.
 
 ### IX. Disposability: - Maximize robustness with fast startup and graceful shutdown
 In a world of rolling deployments, autoscaling, and one click rollbacks it's critical that your applications startup quickly and shutdown gracefully.

@@ -91,7 +91,7 @@ records:
   - delay: 50
     content: "resources:\r\n  database:\r\n    type: postgres\r\nservices:\r\n  web:\r\n    build: .\r\n    command: bin/web\r\n    health: /check\r\n    port: 3000\r\n    resources:\r\n      - database\r\n"
 
-  - delay: 10000
+  - delay: 8000
     content: "\e[0;0H\e[2J"
 
   - delay: 0
@@ -147,7 +147,7 @@ records:
   - delay: 3000
     content: "\e[38;5;33mweb\e[0m    | ns=site at=request method=GET path=/check code=200\r\n"
 
-  - delay: 10000
+  - delay: 8000
     content: "\e[2J\e[0;0H"
 
   - delay: 0
@@ -231,5 +231,5 @@ records:
   - delay: 0
     content: "web      site-web.prod-1JFKD.us-east-1.convox.site  443:3000\r\n"
 
-  - delay: 10000
+  - delay: 8000
     content: "\e[2J\e[0;0H"

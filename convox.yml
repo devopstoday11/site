@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    domain: ${DOMAIN}
+    environment:
+      - DEVELOPMENT=false
+    health:
+      path: /check
+      interval: 30
+    port: https:3000

@@ -1,0 +1,184 @@
+$info: #00b8e6;
+$primary: rgb(56,130,186);
+$success: #009900;
+$warning: #ce8c08;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+	xxl: 1440px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+	xxl: 1400px,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+}
+
+.btn {
+	border-radius: 3px;
+}
+
+.navbar {
+	background-color: rgb(16,25,33);
+}
+
+.intro {
+	background-color: rgb(48,55,62);
+	color: #fff;
+	padding-top: 60px;
+	padding-bottom: 70px;
+
+	h1, h2 {
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		font-size: 3.2em;
+		font-weight: 700;
+	}
+
+	h2 {
+		color: #999;
+		margin-top: 10px;
+		margin-bottom: 50px;
+	}
+
+	h3 {
+		letter-spacing: 0.06em;
+		margin-top: 30px;
+		font-size: 1.4em;
+		font-weight: 300;
+	}
+
+	div.buttons {
+		margin-top: 60px;
+
+		.btn {
+			padding: 10px 20px;
+			padding-right: 18px;
+			font-size: 1.3em;
+		}
+	}
+}
+
+.features {
+	background-color: #e3e6e9;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	h1 {
+		font-size: 1.4em;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	ul.items {
+		color: #444;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline;
+			list-style-type: none;
+			font-size: 2.7em;
+			font-weight: 700;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+
+	.integrations {
+		ul.items {
+			li {
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			font-size: 0.9em;
+		}
+
+		@include media-breakpoint-up(lg) {
+			font-size: 1.0em;
+		}
+	}
+
+	.compliance {
+		.card-body {
+			font-size: 0.8em;
+			margin-bottom: 6px;
+			margin-top: 6px;
+		}
+
+		ul.items {
+			i {
+				font-size: 0.9em;
+			}
+		}
+	}
+}
+
+.customers {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	h1 {
+		color: #555;
+		font-size: 2.2rem;
+		margin: 0;
+		margin-bottom: 50px;
+	}
+
+	ul.logos {
+		padding: 0;
+
+		li {
+			display: inline-block;
+			list-style-type: none;
+			margin-left: 12px;
+			margin-right: 12px;
+
+			img {
+				width: 80px;
+			}
+
+			p {
+				margin-top: 20px;
+				color: #999;
+				font-size: 0.8em;
+			}
+		}
+	}
+}
+
+.quotes {
+	background-color: #e3e6e9;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	.blockquote {
+		.blockquote-footer {
+			margin-top: 10px;
+		}
+	}
+}
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/v4-shims';

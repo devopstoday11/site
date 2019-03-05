@@ -99,6 +99,12 @@ body {
 		}
 	}
 
+	img {
+		height: 48px;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+
 	.integrations {
 		ul.items {
 			li {
@@ -113,6 +119,13 @@ body {
 
 		@include media-breakpoint-up(lg) {
 			font-size: 1.0em;
+		}
+	}
+
+	.stack {
+		img {
+			margin-top: 0px;
+			margin-bottom: 8px;
 		}
 	}
 

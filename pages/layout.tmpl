@@ -11,7 +11,7 @@
 			<script src="/assets/site.js"></script>
 		</head>
 		<body>
-			<nav class="navbar navbar-expand-md navbar-dark">
+			<nav class="navbar navbar-expand-md fixed-top navbar-dark">
 				<div class="container pt-1 pb-1">
 					<a class="navbar-brand" href="/">
 						<img src="/images/logo.png" height="30">
@@ -39,12 +39,20 @@
 					</div>
 				</div>
 			</nav>
-			<div class="body">
+			<div class="content">
 				{{ template "content" . }}
 			</div>
-			<nav class="navbar fixed-bottom navbar-dark bg-dark text-light">
+			<nav class="navbar navbar-expand fixed-bottom navbar-dark bg-dark text-light">
 				<div class="container">
-					&copy; 2019 Convox, Inc. All rights reserved.
+					<ul class="navbar-nav">
+						<li class="nav-item pl-3">
+							&copy; 2019 Convox, Inc. All rights reserved.
+						</li>
+					</ul>
+					<ul class="navbar-nav pr-2">
+						<li class="nav-item"><a class="nav-link" href="/privacy">Privacy Policy</a></li>
+						<li class="nav-item"><a class="nav-link" href="/terms">Terms of Use</a></li>
+					</ul>
 				</div>
 			</nav>
 		</body>

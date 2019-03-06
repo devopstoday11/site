@@ -23,6 +23,13 @@ $container-max-widths: (
 @import "~bootstrap/scss/bootstrap";
 
 body {
+	background-color: #e3e6e9;
+	display: block;
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.content {
 }
 
 .btn {
@@ -36,8 +43,11 @@ body {
 .intro {
 	background-color: rgb(48,55,62);
 	color: #fff;
+	display: block;
 	padding-top: 60px;
 	padding-bottom: 70px;
+	position: relative;
+
 
 	h1, h2 {
 		letter-spacing: 0.08em;
@@ -74,7 +84,6 @@ body {
 }
 
 .features {
-	background-color: #e3e6e9;
 	padding-top: 40px;
 	padding-bottom: 40px;
 
@@ -145,6 +154,7 @@ body {
 }
 
 .customers {
+	background-color: #fff;
 	padding-top: 40px;
 	padding-bottom: 40px;
 
@@ -178,13 +188,47 @@ body {
 }
 
 .quotes {
-	background-color: #e3e6e9;
 	padding-top: 40px;
 	padding-bottom: 40px;
 
 	.blockquote {
 		.blockquote-footer {
 			margin-top: 10px;
+		}
+	}
+}
+
+.terms {
+	background-color: #fff;
+	padding: 20px;
+	padding-bottom: 10px;
+
+	h1, h2, h3 {
+		font-weight: 800;
+		letter-spacing: 0.8;
+	}
+
+	h1 {
+		margin-bottom: 28px;
+	}
+
+	h2 {
+		color: #666;
+		font-weight: 700;
+		margin-top: 28px;
+	}
+
+	h3 {
+		color: #888;
+		font-weight: 600;
+		margin-top: 24px;
+	}
+
+	ol {
+		margin-top: 10px;
+
+		li {
+			margin-top: 4px;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 ---
-title: Migrating a Django application from Heroku to AWS ECS using Convox
+title: Migrating a Django application from Heroku to AWS ECS
 author: Cameron Gray
 twitter: camerondgray
 tags: [Heroku, Convox, Django, AWS, ECS, Migrate from heroku to AWS, Django AWS]

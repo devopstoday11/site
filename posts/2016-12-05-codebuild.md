@@ -46,7 +46,7 @@ AWS CodeBuild offers additional benefits:
 
 ## Next Steps: Simplify
 
-Up until now, the Convox platform offered a private build service running inside an existing ECS cluster ([architecture diagram](https://convox.com/assets/images/build%20sequence%20diagram.png)). We now get to simplify the platform by delegating builds to CodeBuild:
+Up until now, the Convox platform offered a private build service running inside an existing ECS cluster ([architecture diagram](https://convox.com/images/blog/build%20sequence%20diagram.png)). We now get to simplify the platform by delegating builds to CodeBuild:
 
 ![Simple Build Architecture](https://cdn-images-1.medium.com/max/2468/1*q8VCDvua49Yn1ZRUble45w.png)*Simple Build Architecture*
 

@@ -1,9 +1,9 @@
 {{ define "content" }}
-	<div class="container mt-4 mb-4">
-		<div class="blog index card">
+	<div class="container blog-container">
+		<div class="blog index">
 			<ul class="list-group list-group-flush">
 				{{ range .Posts }}
-					<li class="post list-group-item d-flex align-items-center">
+					<li class="post list-group-item d-flex align-items-center p-4 pl-5 pr-5">
 						<div class="flex-grow-1">
 							<a href="/blog/{{.Slug}}">
 								{{ .Title }}

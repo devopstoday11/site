@@ -1,5 +1,5 @@
 ---
-title: Commit your node modules
+title: Commit your Dependencies
 author: Cameron Gray
 twitter: camerondgray
 tags: [nodejs, npm, docker build speed, node modules]
@@ -14,11 +14,11 @@ For almost a decade I have stood firmly on the side that you should define your 
 
 This latest issue gives me a chance to revisit my thinking and I have to admit I have changed my mind. The time has come, I give in. You should commit your Node modules to your source control repository. There I said it. I feel better.
 
-While for a long time I felt like, in addition to the arguments I mentioned above, by taking the package.json stance, I was somehow defending a core belief of the Node community, but the truth is the Node community threw the towel in on this fight a while ago. 
+While for a long time I felt like, in addition to the arguments I mentioned above, by taking the package.json stance, I was somehow defending a core belief of the Node community, but the truth is the Node community threw the towel in on this fight a while ago.
 
-First there was npm [shrinkwrap](https://docs.npmjs.com/files/shrinkwrap.json), then the folks at Facebook came up with [yarn](https://yarnpkg.com/en/). Finally NPM introduced [package-lock](https://docs.npmjs.com/files/package-locks) and version locking your dependency tree became part of the Node gospel. 
+First there was npm [shrinkwrap](https://docs.npmjs.com/files/shrinkwrap.json), then the folks at Facebook came up with [yarn](https://yarnpkg.com/en/). Finally NPM introduced [package-lock](https://docs.npmjs.com/files/package-locks) and version locking your dependency tree became part of the Node gospel.
 
-While the debate is definitely still raging about whether or not you should lock your dependencies, and there are a ton of people who know a lot more [package management](https://medium.com/@sdboyer/so-you-want-to-write-a-package-manager-4ae9c17d9527) than I do, I am just going to assume that ship has sailed and we now live in a world of dependency locking. 
+While the debate is definitely still raging about whether or not you should lock your dependencies, and there are a ton of people who know a lot more [package management](https://medium.com/@sdboyer/so-you-want-to-write-a-package-manager-4ae9c17d9527) than I do, I am just going to assume that ship has sailed and we now live in a world of dependency locking.
 
 Since we are already version locking our dependencies the only question that’s left is should we keep downloading those dependencies from NPM every time we build? At this point I just don’t see the benefit.  At Convox, when we work with people to help speed up Docker builds more often than not what we see are thousands of lines, and many minutes, of NPM install messages. Why not just commit our Node modules and save that entire build step, not to mention avoiding the potential risk of an NPM outage or security breach.
 

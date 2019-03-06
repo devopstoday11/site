@@ -14,6 +14,6 @@ Terminal sessions are stored using the open TTYRec standard and encrypted at res
 
 Here is an example of Session Playback in action.
 
-![Convox Session Playback in Action](/assets/images/sessionplayback.gif)*Convox Session Playback for Audit Logs*
+![Convox Session Playback in Action](/images/blog/sessionplayback.gif)*Convox Session Playback for Audit Logs*
 
 If you think Audit Logs, or Session Playback might help your team or want to talk to us about Convox [join us](http://invite.convox.com/) over on our public Slack channel where you will find a friendly and helpful community.

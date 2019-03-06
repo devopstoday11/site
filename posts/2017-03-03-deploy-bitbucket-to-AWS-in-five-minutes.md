@@ -29,7 +29,7 @@ We'd like to share an example of deploying just such an app--one with extensive 
 
 To visit your Bitbucket Server app, run `convox apps info bitbucket-server` and visit the URL listed next to "Endpoints." You should see a Bitbucket "starting up" screen like this:
 
-![Bitbucket starting up screenshot](/assets/images/bitbucket-starting-up.png)
+![Bitbucket starting up screenshot](/images/blog/bitbucket-starting-up.png)
 
 ## Why was that so easy?
 

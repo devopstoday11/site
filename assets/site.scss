@@ -25,8 +25,8 @@ $container-max-widths: (
 body {
 	background-color: #e3e6e9;
 	display: block;
-	padding-top: 60px;
-	padding-bottom: 40px;
+	padding-top: 64px;
+	padding-bottom: 56px;
 }
 
 .content {
@@ -189,7 +189,7 @@ body {
 
 .quotes {
 	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 
 	.blockquote {
 		.blockquote-footer {
@@ -233,6 +233,10 @@ body {
 	}
 }
 
+.blog-content {
+	background-color: rgb(48,55,62);
+}
+
 .blog {
 	background-color: #fff;
 
@@ -263,18 +267,19 @@ body {
 
 		h1 {
 			margin-bottom: 36px;
+			margin-top: 10px;
 			font-size: 1.8em;
 		}
 
 		h2 {
 			margin-bottom: 10px;
 			margin-top: 36px;
-			color: #666;
+			color: #555;
 			font-size: 1.6em;
 		}
 
 		h3 {
-			color: #888;
+			color: #666;
 			font-size: 1.4em;
 			margin-top: 24px;
 		}
@@ -294,6 +299,10 @@ body {
 			border: 1px #bbb solid;
 			border-radius: 4px;
 			padding: 12px;
+		}
+
+		p {
+			margin-top: 24px;
 		}
 	}
 }

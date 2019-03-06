@@ -43,7 +43,7 @@ Workflows are built upon commands and APIs that are easy to understand:
 
 We are now introducing a Workflow Builder that uses these APIs. Here you can use a simple UI to automate how Images are built and released across Racks and Apps:
 
-![Workflow Builder](/assets/images/workflow-builder.png){: .center }*Workflow Builder*
+![Workflow Builder](/images/blog/workflow-builder.png){: .center }*Workflow Builder*
 
 When you can automate how to build Images and how to release them to Racks and Apps extremely sophisticated workflows are possible.
 

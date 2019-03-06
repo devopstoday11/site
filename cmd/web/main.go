@@ -4,34 +4,72 @@ import (
 	"fmt"
 	"html/template"
 	"os"
+	"time"
 
+	"github.com/convox/site/pkg/posts"
 	"github.com/convox/stdapi"
 	"github.com/gobuffalo/packr"
 )
 
+var (
+	Posts posts.Posts
+)
+
 func main() {
+	if err := run(); err != nil {
+		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
+		os.Exit(1)
+	}
+}
+
+func run() error {
 	s := stdapi.New("site", "site.convox")
 
 	s.Router.Static("/assets", packr.NewBox("../../public/assets"))
 	s.Router.Static("/images", packr.NewBox("../../public/images"))
 
 	s.Route("GET", "/", page)
+	s.Route("GET", "/blog", blog)
+	s.Route("GET", "/blog/{slug}", post)
 	s.Route("GET", "/{slug}", page)
 
 	stdapi.LoadTemplates(packr.NewBox("../../pages"), helpers)
 
-	if err := s.Listen("https", ":3000"); err != nil {
-		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
-		os.Exit(1)
+	ps, err := posts.Load(packr.NewBox("../../posts"))
+	if err != nil {
+		return err
 	}
+
+	Posts = ps
+
+	if err := s.Listen("https", ":3000"); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func helpers(c *stdapi.Context) template.FuncMap {
 	return template.FuncMap{
+		"body": func(data []byte) template.HTML {
+			return template.HTML(string(data))
+		},
+		"date": func(t time.Time) string {
+			return t.Format("Jan 02, 2006")
+		},
 		"env": func(s string) string {
 			return os.Getenv(s)
 		},
 	}
+}
+
+func blog(c *stdapi.Context) error {
+	params := map[string]interface{}{
+		"Active": "blog",
+		"Posts":  Posts,
+	}
+
+	return c.RenderTemplate("blog/index", params)
 }
 
 func page(c *stdapi.Context) error {
@@ -41,55 +79,23 @@ func page(c *stdapi.Context) error {
 		slug = "index"
 	}
 
-	return c.RenderTemplate(slug, nil)
+	params := map[string]interface{}{
+		"Active": "home",
+	}
+
+	return c.RenderTemplate(slug, params)
 }
 
-// func index(c *stdapi.Context) error {
-//   return c.Redirect(302, "/introduction/getting-started")
-// }
+func post(c *stdapi.Context) error {
+	p := Posts.FindSlug(c.Var("slug"))
+	if p == nil {
+		return stdapi.Errorf(404, "post not found")
+	}
 
-// func doc(c *stdapi.Context) error {
-//   params := map[string]interface{}{
-//     "Categories": docs.CategoryList(),
-//     "Slug":       "",
-//   }
+	params := map[string]interface{}{
+		"Active": "blog",
+		"Post":   p,
+	}
 
-//   cc, ok := docs.CategoryList().Find(c.Var("category"))
-//   if !ok {
-//     c.Response().WriteHeader(404)
-//     params["Category"] = ""
-//     return c.RenderTemplate("404", params)
-//   }
-
-//   params["Category"] = cc.Slug
-//   params["CategoryName"] = cc.Name
-
-//   d, ok := cc.Documents.Find(c.Var("slug"))
-//   if !ok {
-//     c.Response().WriteHeader(404)
-//     return c.RenderTemplate("404", params)
-//   }
-
-//   params["Document"] = template.HTML(d.Body)
-//   params["Description"] = d.Description
-//   params["Slug"] = d.Slug
-//   params["Tags"] = d.Tags
-//   params["Title"] = d.Title
-//   params["URL"] = fmt.Sprintf("https://%s/%s/%s", c.Request().Host, cc.Slug, d.Slug)
-
-//   if cc.Slug == "gen1" {
-//     params["Deprecation"] = "Generation 1 has been deprecated and is not recommended for new applications."
-//   }
-
-//   return c.RenderTemplate("doc", params)
-// }
-
-// func redirect(c *stdapi.Context) error {
-//   for _, cc := range docs.CategoryList() {
-//     if d, ok := cc.Documents.Find(c.Var("slug")); ok {
-//       return c.Redirect(301, fmt.Sprintf("/%s/%s", cc.Slug, d.Slug))
-//     }
-//   }
-
-//   return stdapi.Errorf(404, "not found")
-// }
+	return c.RenderTemplate("blog/post", params)
+}

@@ -11,6 +11,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:44d95a8b8b61517a18ba2385c852e77420b3d38b2033a292d5e24f697b3aaf8d"
+  name = "github.com/convox/markdown"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "6481e7c008a4cb321ff3c5c3ed92e5d194302cfe"
+
+[[projects]]
+  branch = "master"
   digest = "1:e41ce11792e31c825cf4e547f1fd029b1fd9bcea2269806958957a0d807dcd13"
   name = "github.com/convox/stdapi"
   packages = ["."]
@@ -118,6 +126,14 @@
   version = "v1.2.2"
 
 [[projects]]
+  digest = "1:2ee0f15eb0fb04f918db7c2dcf39745f40d69f798ef171610a730e8a56aaa4fd"
+  name = "github.com/russross/blackfriday"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "d3b5b032dc8e8927d31a5071b56e14c89f045135"
+  version = "v2.0.1"
+
+[[projects]]
   branch = "master"
   digest = "1:a01b0cb6b3b0960c415f21148b494e78d6b72ad2adcaf1d8b54d26a920a98448"
   name = "github.com/sebest/xff"
@@ -125,10 +141,27 @@
   pruneopts = "UT"
   revision = "6c115e0ffa35d6a2e3f7a9e797c9cf07f0da4b9f"
 
+[[projects]]
+  digest = "1:9421f6e9e28ef86933e824b5caff441366f2b69bb281085b9dca40e1f27a1602"
+  name = "github.com/shurcooL/sanitized_anchor_name"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "7bfe4c7ecddb3666a94b053b422cdd8f5aaa3615"
+  version = "v1.0.0"
+
+[[projects]]
+  digest = "1:4d2e5a73dc1500038e504a8d78b986630e3626dc027bc030ba5c75da257cdb96"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
+  version = "v2.2.2"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/convox/markdown",
     "github.com/convox/stdapi",
     "github.com/gobuffalo/packr",
   ]

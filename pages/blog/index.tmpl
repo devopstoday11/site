@@ -1,0 +1,20 @@
+{{ define "content" }}
+	<div class="container mt-4 mb-4">
+		<div class="blog index card">
+			<ul class="list-group list-group-flush">
+				{{ range .Posts }}
+					<li class="post list-group-item d-flex align-items-center">
+						<div class="flex-grow-1">
+							<a href="/blog/{{.Slug}}">
+								{{ .Title }}
+							</a>
+						</div>
+						<div class="flex-shrink-0 text-right">
+							{{ date .Date }}
+						</div>
+					</li>
+				{{ end }}
+			</ul>
+		</div>
+	</div>
+{{ end }}

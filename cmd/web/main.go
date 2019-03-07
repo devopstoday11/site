@@ -28,6 +28,8 @@ func run() error {
 	s.Router.Static("/assets", packr.NewBox("../../public/assets"))
 	s.Router.Static("/images", packr.NewBox("../../public/images"))
 
+	s.Use(handleRedirects)
+
 	s.Route("GET", "/", page)
 	s.Route("GET", "/blog", blog)
 	s.Route("GET", "/blog/{slug}", post)
@@ -36,6 +38,7 @@ func run() error {
 	stdapi.LoadTemplates(packr.NewBox("../../pages"), helpers)
 
 	s.HandleNotFound(func(c *stdapi.Context) error {
+		c.Response().WriteHeader(404)
 		return c.RenderTemplate("404", map[string]interface{}{"Active": ""})
 	})
 
@@ -88,6 +91,7 @@ func page(c *stdapi.Context) error {
 	}
 
 	if !stdapi.TemplateExists(slug) {
+		c.Response().WriteHeader(404)
 		return c.RenderTemplate("404", params)
 	}
 
@@ -96,13 +100,15 @@ func page(c *stdapi.Context) error {
 
 func post(c *stdapi.Context) error {
 	p := Posts.FindSlug(c.Var("slug"))
-	if p == nil {
-		return stdapi.Errorf(404, "post not found")
-	}
 
 	params := map[string]interface{}{
 		"Active": "blog",
 		"Post":   p,
+	}
+
+	if p == nil {
+		c.Response().WriteHeader(404)
+		return c.RenderTemplate("404", params)
 	}
 
 	return c.RenderTemplate("blog/post", params)

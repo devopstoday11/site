@@ -35,6 +35,10 @@ func run() error {
 
 	stdapi.LoadTemplates(packr.NewBox("../../pages"), helpers)
 
+	s.HandleNotFound(func(c *stdapi.Context) error {
+		return c.RenderTemplate("404", map[string]interface{}{"Active": ""})
+	})
+
 	ps, err := posts.Load(packr.NewBox("../../posts"))
 	if err != nil {
 		return err
@@ -80,7 +84,11 @@ func page(c *stdapi.Context) error {
 	}
 
 	params := map[string]interface{}{
-		"Active": "home",
+		"Active": slug,
+	}
+
+	if !stdapi.TemplateExists(slug) {
+		return c.RenderTemplate("404", params)
 	}
 
 	return c.RenderTemplate(slug, params)

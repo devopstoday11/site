@@ -10,7 +10,7 @@
 
 			<script src="/assets/site.js"></script>
 		</head>
-		<body>
+		<body class="{{.Active}}">
 			<nav class="navbar navbar-expand-md fixed-top navbar-dark">
 				<div class="container pt-1 pb-1">
 					<a class="navbar-brand" href="/">
@@ -39,12 +39,12 @@
 					</div>
 				</div>
 			</nav>
-			<div class="content {{.Active}}-content">
+			<div class="content">
 				{{ template "content" . }}
 			</div>
 			<nav class="navbar navbar-expand fixed-bottom navbar-dark text-light">
 				<div class="container">
-					<ul class="navbar-nav">
+					<ul class="navbar-nav d-none d-sm-block">
 						<li class="nav-item pl-3">
 							&copy; 2019 Convox, Inc. All rights reserved.
 						</li>

@@ -8,6 +8,8 @@ var redirects = map[string]string{
 	"/cli/osx/convox":         "https://convox.s3.amazonaws.com/cli/darwin/convox",
 	"/cli/windows/convox.exe": "https://convox.s3.amazonaws.com/cli/windows/convox.exe",
 	"/guide/heroku":           "https://docs.convox.com/migration/heroku",
+	"/k8s":                    "https://goo.gl/forms/3n0ejrzPgr7WkIU92",
+	"/kubernetes":             "https://goo.gl/forms/3n0ejrzPgr7WkIU92",
 	"/legal/privacy":          "/privacy",
 	"/legal/terms":            "/terms",
 }

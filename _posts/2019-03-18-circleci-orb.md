@@ -2,7 +2,7 @@
 title: Deploying to AWS ECS using CircleCI and Convox
 author: Cameron Gray
 twitter: camerondgray
-tags: [CircleCI, Convox, CI/CD, AWS, ECS, CircleCI orb]
+tags: [CircleCI, Convox, CI/CD, AWS, ECS, CircleCI orb, EKS]
 description: AWS deployments made easy with Convox and CircleCI
 ---
 

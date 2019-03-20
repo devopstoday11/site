@@ -12,6 +12,8 @@ var redirects = map[string]string{
 	"/kubernetes":             "https://goo.gl/forms/3n0ejrzPgr7WkIU92",
 	"/legal/privacy":          "/privacy",
 	"/legal/terms":            "/terms",
+	"/login":                  "https://console.convox.com/login",
+	"/signup":                 "https://console.convox.com/signup",
 }
 
 func handleRedirects(fn stdapi.HandlerFunc) stdapi.HandlerFunc {

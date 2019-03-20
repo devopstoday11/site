@@ -40,6 +40,7 @@ jobs:
       - run: make test
       - convox/deploy:
           rack: production
+          app: example
 ```
 
  A few important notes. First you need to specify `version: 2.1` in your config.yml in order to use orbs on CircleCI. Second if you want to use the Convox Orb deploy command you need to make sure it’s preceded by a `checkout` command otherwise Convox won’t have any code to deploy! Go ahead and check out the Convox Orb. We think there is no easier way to build, test, and deploy your app to AWS ECS than CircleCI + Convox.

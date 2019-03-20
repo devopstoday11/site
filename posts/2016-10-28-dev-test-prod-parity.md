@@ -24,7 +24,7 @@ Dev/Prod Parity is an aspiration goal in Twelve Factor, but it’s actually poss
 
 A very common setup is [Homebrew](http://brew.sh/) for development on a Mac laptop, [CircleCI](https://circleci.com/) for testing and [Heroku](https://www.heroku.com/) for production. With these systems, it’s hard to know, let alone guarantee, what version of Node.js, ImageMagick and Postgres are used in each environment.
 
-![Laptop, CI Service, and Production Service Incompatibility Matrix](/assets/img/dev-test-prod-matrix.png){: .center } *Laptop, CI Service, and Production Service Incompatibility Matrix*
+![Laptop, CI Service, and Production Service Incompatibility Matrix](/assets/img/dev-test-prod-matrix.png) *Laptop, CI Service, and Production Service Incompatibility Matrix*
 
 It’s not impossible to set it all up, but there are pitfalls.
 

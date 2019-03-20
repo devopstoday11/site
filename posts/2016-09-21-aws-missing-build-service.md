@@ -86,9 +86,9 @@ The ECS task will carry out a simple build script:
 
 The API and one-off build containers run on ECS and leverage the Docker daemon. The build upload is passed from the API to the build task via S3. ECR stores the final Docker Image. DynamoDB saves a record of the build ID and it's final status.
 
-![Build Sequence](/images/blog/build sequence diagram.png){: .center }*Build Sequence*
+![Build Sequence](/images/blog/build sequence diagram.png)*Build Sequence*
 
-![Build Infrastructure](/images/blog/build block diagram.png){: .center }*Build Infrastructure*
+![Build Infrastructure](/images/blog/build block diagram.png)*Build Infrastructure*
 
 Even though AWS doesn’t have a dedicated build service, we can design a simple one on top of the other AWS managed services.
 

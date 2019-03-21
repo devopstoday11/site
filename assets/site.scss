@@ -371,6 +371,35 @@ body.pricing {
 	background-color: #fff;
 }
 
+body.enterprise {
+	background-color: rgb(48,55,62);
+}
+
+div.config {
+	background-color: #e3e6e9;
+	padding-top: 40px;
+	padding-bottom: 20px;
+
+	.blockquote {
+		.blockquote-footer {
+			margin-top: 10px;
+		}
+	}
+}
+
+div.cost {
+	background-color: #fff;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	h1 {
+		color: #555;
+		font-size: 2.2rem;
+		margin: 0;
+		margin-bottom: 50px;
+	}
+}
+
 section.general {
 	h1 {
 		color: #444;

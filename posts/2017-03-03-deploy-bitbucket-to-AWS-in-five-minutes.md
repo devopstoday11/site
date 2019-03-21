@@ -37,7 +37,7 @@ Had you deployed the codebase of an app instead of an image, you'd have needed m
 
 ## What if I don't have a Convox Rack?
 
-If you haven't used Convox before, then this demo might feel out of reach. The good news is that you can set up a Rack in about 20 minutes by signing up for a Convox account at [{{ site.console_host }}](https://{{ site.console_host }}) and then following our welcome checklist. It steps you through integrating with an AWS account and installing a Rack.
+If you haven't used Convox before, then this demo might feel out of reach. The good news is that you can set up a Rack in about 20 minutes by signing up for a Convox account at [console.convox.com](https://console.convox.com) and then following our welcome checklist. It steps you through integrating with an AWS account and installing a Rack.
 
 If you've never run software on AWS before, this would be a great way to try it out. Convox takes care of creating dozens of resources and configuring them for a convenient experience.
 

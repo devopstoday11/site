@@ -15,7 +15,7 @@ To this end, we’re happy to announce our **AWS Integration**. Deploying your a
 
 ## Setup
 
-[Sign up for Convox](https://{{ site.console_host }}/grid/signup). Follow the interactive setup checklist to create your first organization and to integrate your AWS account.
+[Sign up for Convox](https://console.convox.com/grid/signup). Follow the interactive setup checklist to create your first organization and to integrate your AWS account.
 
 Copy and paste an AWS access key into the form. If you are more comfortable using the [AWS Command Line Interface](https://aws.amazon.com/cli/), you can copy and paste a few commands into your terminal and paste the resulting IAM role ID into the form.
 

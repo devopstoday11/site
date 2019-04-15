@@ -28,6 +28,6 @@ You can see the full list of supported regions at any time [in our documentation
 
 ## How to install
 
-You can install a Rack in eu-west-2 by selecting it from the drop-down menu on the "Add a Rack" page in your [Convox console](https://{{ site.console_host }}/). For details, see the [Rack install documentation](https://convox.com/docs/installing-a-rack/).
+You can install a Rack in eu-west-2 by selecting it from the drop-down menu on the "Add a Rack" page in your [Convox console](https://console.convox.com/). For details, see the [Rack install documentation](https://convox.com/docs/installing-a-rack/).
 
 Is there a region you'd like to see supported by Convox? [Let us know!](https://twitter.com/goconvox)

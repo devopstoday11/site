@@ -155,9 +155,6 @@ div.features {
 
 div.feature {
 	background-color: #fff;
-	padding-top: 40px;
-	padding-bottom: 40px;
-
 	h1 {
 		font-size: 1.4em;
 		font-weight: 700;
@@ -169,17 +166,13 @@ div.feature-image {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	background-color: #fff;
 	img {
-		width: 100%;
+		width: 500px;
 	}
 }
 
 div.feature-desc {
 	background-color: #fff;
-	padding-top: 40px;
-	padding-left: 20px;
-	padding-bottom: 20px;
 	border: none;
-
 }
 
 div.checklist {

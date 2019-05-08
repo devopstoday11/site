@@ -239,6 +239,72 @@ div.quotes {
 	}
 }
 
+div.enterprise-features {
+	padding-top: 20px;
+	padding-bottom: 60px;
+	background-color: #e3e6e9;
+	text-align: center;
+
+	.description{
+		font-size: 1.2em;
+		margin-bottom: 6px;
+		margin-top: 12px;
+	}
+	.desc {
+		background-color: #fff;
+		border: none;
+		min-height: 200px;
+	}
+	h1 {
+		color: #555;
+		font-size: 2.2rem;
+		margin: 0;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+}
+
+div.enterprise-intro {
+	color: #fff;
+	display: block;
+	padding-top: 60px;
+	padding-bottom: 70px;
+	position: relative;
+
+
+	h1, h2 {
+		letter-spacing: 0.08em;
+	}
+
+	h1 {
+		font-size: 3.2em;
+		font-weight: 700;
+	}
+
+	h2 {
+		color: #999;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	h3 {
+		letter-spacing: 0.06em;
+		margin-top: 10px;
+		font-size: 1.4em;
+		font-weight: 300;
+	}
+
+	div.buttons {
+		margin-top: 60px;
+
+		.btn {
+			padding: 10px 20px;
+			padding-right: 18px;
+			font-size: 1.3em;
+		}
+	}
+}
+
 div.terms {
 	background-color: #fff;
 	padding: 20px;

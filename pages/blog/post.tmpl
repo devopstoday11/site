@@ -1,22 +1,22 @@
 {{ define "head" }}
-  <meta name="description" content="{{.Description}}">
-  <title>{{.Title}}</title>
+	<meta name="description" content="{{.Description}}">
+	<title>{{.Title}}</title>
 
-  <meta property="og:description" content="{{.Description}}">
-  <meta property="og:image" content="{{.OgImage}}">
-  <meta property="og:site_name" content="Convox Blog">
-  <meta property="og:title" content="{{.Title}}">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="{{.URL}}">
+	<meta property="og:description" content="{{.Description}}">
+	<meta property="og:image" content="{{.OgImage}}">
+	meta property="og:site_name" content="Convox Blog">
+	<meta property="og:title" content="{{.Title}}">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="{{.URL}}">
 
-  <meta name="twitter:description" content="{{.Description}}">
-  <meta name="twitter:image" content="{{.OgImage}}">
-  <meta name="twitter:site" content="@goconvox">
-  <meta name="twitter:title" content="{{.Title}}">
+	<meta name="twitter:description" content="{{.Description}}">
+	<meta name="twitter:image" content="{{.OgImage}}">
+	<meta name="twitter:site" content="@goconvox">
+	<meta name="twitter:title" content="{{.Title}}">
 
-  {{ range .Tags }}
-    <meta property="article:tag" content="{{.}}">
-  {{ end }}
+	{{ range .Tags }}
+	<meta property="article:tag" content="{{.}}">
+	{{ end }}
 {{ end }}
 {{ define "content" }}
 	<div class="container">

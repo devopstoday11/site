@@ -19,10 +19,13 @@ var (
 )
 
 type Post struct {
-	Body  []byte
-	Date  time.Time
-	Slug  string
-	Title string
+	Body        []byte
+	Date        time.Time
+	Slug        string
+	Title       string
+	Description string
+	OgImage     string
+	Tags        []string
 }
 
 type Posts []Post
@@ -83,6 +86,26 @@ func loadPost(name string, data []byte) (*Post, error) {
 
 	if t, ok := d.Front["title"].(string); ok {
 		p.Title = t
+	}
+
+	if d, ok := d.Front["description"].(string); ok {
+		p.Description = d
+	} else {
+		p.Description = p.Title
+	}
+
+	if o, ok := d.Front["ogimage"].(string); ok {
+		p.OgImage = o
+	} else {
+		p.OgImage = "https://convox.com/images/logos/convox_social_logo.png"
+	}
+
+	if tags, ok := d.Front["tags"].([]interface{}); ok {
+		for _, t := range tags {
+			if ts, ok := t.(string); ok {
+				p.Tags = append(p.Tags, ts)
+			}
+		}
 	}
 
 	return p, nil

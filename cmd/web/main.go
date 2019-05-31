@@ -102,8 +102,13 @@ func post(c *stdapi.Context) error {
 	p := Posts.FindSlug(c.Var("slug"))
 
 	params := map[string]interface{}{
-		"Active": "blog",
-		"Post":   p,
+		"Active":      "blog",
+		"Post":        p,
+		"Title":       p.Title,
+		"URL":         fmt.Sprintf("https://%s/blog/%s", c.Request().Host, p.Slug),
+		"Description": p.Description,
+		"OgImage":     p.OgImage,
+		"Tags":        p.Tags,
 	}
 
 	if p == nil {

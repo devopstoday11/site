@@ -10,7 +10,7 @@ The newest kid on the CI/CD block is [Github Actions](https://github.com/feature
 
 The first thing you need to know is that as of the time we are publishing this post, Github Actions are not generally available and you will need to [sign up for the Beta](https://github.com/features/actions) to gain access. Github does seem to be opening up the beta fairly broadly at the moment though so you shouldn’t have too much trouble getting in. The second thing to keep in mind is that Github Actions have had a fairly significant overhaul since the initial version was released. When reading documentation, or working on your action, you will want to make sure you are working with the .YAML syntax version and not the legacy .HCL syntax version.
 
-The core unit of Github Actions is a workflow. A workflow is repeatable process that is made up of one or more jobs. A job is in turn a set of steps that is run in a specific instance of a virtual environment.  Steps are made up of specific actions which are the smallest structures that can be defined to perform a specific task. Clear as mud right?
+The core unit of Github Actions is a workflow. A workflow is repeatable process that is made up of one or more jobs. A job is in turn a set of steps that is run in a specific instance of a virtual environment.  Steps are made up of specific actions which are the smallest structures that can be defined to perform a specific task.
 
 To keep things simple we will focus on a single Job workflow. For the workflow you need to define two things. The first is an `on` event. This is the trigger event which will either be some Github event (ie: pushing a specific branch) or a schedule (ie: daily at 05:00 UTC). The second requirement is at least one job that the workflow will execute.
 
@@ -62,6 +62,6 @@ Looking through this we are kicking our workflow off with the “push” event. 
 
 3. “Deploy” which runs the Convox deploy command passing in the required environment variables so the deploy command has everything it needs.
 
-Actions support Input Variables, Environment Variables, and Secrets all if which will be injected as Environment Variables into the container running the action.
+Actions support Input Variables, Environment Variables, and Secrets all of which will be injected as Environment Variables into the container running the action.
 
 With this action added to the `/github/workflows` folder of your repository your application will automatically deploy itself to Convox every time you push to master. We have also created our own [reusable Github Action](https://github.com/convox/actions) which you can incorporate into your own Github Action workflows. We are just scratching the surface on what's possible with Github Actions so stay tuned for future posts as we dig deeper into this powerful set of tools.

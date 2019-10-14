@@ -47,7 +47,7 @@ jobs:
         sudo chmod 755 /usr/local/bin/convox
     - name: Deploy
       env:
-        CONVOX_PASSWORD: ${{ secrets.CONVOX_DEPLOY_KEY}}
+        CONVOX_PASSWORD: ${{ secrets.CONVOX_DEPLOY_KEY }}
         CONVOX_HOST: console.convox.com
         CONVOX_RACK: cgdemo/prod-demo
         APP: nodedemo

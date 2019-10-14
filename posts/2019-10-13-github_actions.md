@@ -1,5 +1,5 @@
 ---
-title: Building a Github action to deploy to ECS and EKS
+title: Building a Github Action to Deploy to ECS and EKS
 author: Cameron Gray
 twitter: camerondgray
 tags: [Github actions, Convox, ECS, EKS, CI, CD]
@@ -12,13 +12,11 @@ The first thing you need to know is that as of the time we are publishing this p
 
 The core unit of Github Actions is a workflow. A workflow is repeatable process that is made up of one or more jobs. A job is in turn a set of steps that is run in a specific instance of a virtual environment.  Steps are made up of specific actions which are the smallest structures that can be defined to perform a specific task. Clear as mud right?
 
-To keep things simple we will focus on a single Job workflow. For the workflow you need to define two things. The first is an “on” event. This is the trigger event which will either be some Github event (ie: pushing a specific branch) or a schedule (ie: daily at 05:00 UTC). The second requirement is at least one job that the workflow will execute.
+To keep things simple we will focus on a single Job workflow. For the workflow you need to define two things. The first is an `on` event. This is the trigger event which will either be some Github event (ie: pushing a specific branch) or a schedule (ie: daily at 05:00 UTC). The second requirement is at least one job that the workflow will execute.
 
-For a Job you also need to define two things. The first is “runs-on” which defines the type of virtual machine required to execute this job. The second is at least one step to run as part of that job.
+For a Job you also need to define two things. The first is `runs-on` which defines the type of virtual machine required to execute this job. The second is at least one step to run as part of that job.
 
-For a step you will need to define at least one Action or Command. An action being piece of reusable code defined in either a Javascript File or a Docker Container. A command is just any text command that can be executed in one of the available shells for the specified Virtual Environment.
-
-You can define all these components inside of your workflow, which we found to be very helpful for experimentation and development but the reusable pattern that is widely adopted is to define the actions in their own repositories and then put them together in a workflow that is defined on the “target” repository. 
+For a step you will need to define at least one Action or Command. An action is a piece of reusable code defined in either a Javascript File or a Docker Container. A command is any shell command that can be executed in one of the available shells for the specified Virtual Environment.
 
 For our example we have a simple node.js app that we want to build and deploy to our Convox Rack running on ECS every time there is a new push. Because Convox supports [Deploy Keys](https://docs.convox.com/console/deploy-keys) it's relatively simple to deploy an app to a Convox Rack running on either ECS or EKS from almost any CI/CD platform including Github Actions. In order to do this we will need a Linux virtual machine to execute the following steps:
 
@@ -32,17 +30,13 @@ To build this into our workflow we can simply add a `main.yml` file to the `/git
 
 ```
 name: CI
-
 on:
   push:
     branches:    
       - master
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout
       uses: actions/checkout@v1
@@ -58,10 +52,9 @@ jobs:
         CONVOX_RACK: cgdemo/prod-demo
         APP: nodedemo
       run: convox deploy --app=$APP
-
 ```
 
-Looking through this it’s fairly simple. We are kicking our workflow off with the “push” event. In this case we are filtering on pushes to the master branch but you can also specify a tag or a file path pattern. Our job runs on the latest ubuntu virtual environment which gives us all the tools we need. We have three steps defined.
+Looking through this we are kicking our workflow off with the “push” event. In this case we are filtering on pushes to the master branch but you can also specify a tag or a file path pattern. Our job runs on the latest ubuntu virtual environment which gives us all the tools we need. We have three steps defined.
 
 1. “Checkout” which uses the reusable [actions/checkout@v1 Action](https://github.com/actions/checkout) created and maintained by Github.
 
@@ -71,4 +64,4 @@ Looking through this it’s fairly simple. We are kicking our workflow off with 
 
 Actions support Input Variables, Environment Variables, and Secrets all if which will be injected as Environment Variables into the container running the action.
 
-With this action added to the `/github/workflows` folder of your repository your application will automatically deploy itself to Convox every time you push to master. We have also created our own [re-usable Github Action](https://github.com/convox/actions) which you can incorporate into your own Github Action workflows. We are just scratching the surface on what's possible with Github Actions so stayed tuned for future posts as we dig deeper into this powerful set of tools.
+With this action added to the `/github/workflows` folder of your repository your application will automatically deploy itself to Convox every time you push to master. We have also created our own [reusable Github Action](https://github.com/convox/actions) which you can incorporate into your own Github Action workflows. We are just scratching the surface on what's possible with Github Actions so stay tuned for future posts as we dig deeper into this powerful set of tools.

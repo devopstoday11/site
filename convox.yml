@@ -4,5 +4,6 @@ services:
     domain: ${DOMAIN}
     environment:
       - SEGMENT_TOKEN
+      - HOST
     health: /check
     port: https:3000

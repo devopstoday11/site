@@ -1,7 +1,7 @@
-.PHONY: all build mocks test
+.PHONY: all build images mocks test
 
 commands  = web
-terminals = intro
+terminals = cluster install intro release
 webpack   = public/assets/site.js
 
 assets   = $(wildcard assets/*)
@@ -34,7 +34,7 @@ $(binaries): $(GOPATH)/bin/%: $(sources)
 
 $(GOPATH)/bin/web: $(webpack)
 
-$(images): public/images/terminals/%.gif: assets/%.yml
+$(images): public/images/terminals/%.gif: assets/terminals/%.yml
 	terminalizer render $< -o $@
 
 $(webpack): $(assets)

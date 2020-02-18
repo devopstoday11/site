@@ -30,6 +30,7 @@ body {
 }
 
 .content {
+	margin-bottom: 56px;
 }
 
 .btn {
@@ -40,16 +41,53 @@ body {
 	background-color: rgb(16,25,33);
 }
 
-div.intro {
+.terminal {
+	background-color: rgb(18,24,31);
+	border-radius: 8px;
+	padding: 12px;
+
+	&.small pre {
+		font-size: 0.85em;
+
+		@include media-breakpoint-up(sm) {
+			font-size: 0.9em;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: 1.2em;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 0.85em;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 1.0em;
+		}
+		@include media-breakpoint-up(xxl) {
+			font-size: 1.2em;
+		}
+	}
+
+	pre {
+		background-color: inherit;
+		color: rgb(203,204,204);
+		font-family: Monaco, "Lucida Console", "Ubuntu Mono", monospace;
+		font-size: 1.2em;
+		margin-bottom: 0;
+
+		&.input {
+			color: rgb(248,248,243);
+		}
+	}
+}
+
+.intro {
 	color: #fff;
 	display: block;
 	padding-top: 60px;
 	padding-bottom: 70px;
-	position: relative;
 
 
 	h1, h2 {
-		letter-spacing: 0.08em;
+		letter-spacing: 0.05em;
 		text-transform: uppercase;
 	}
 
@@ -61,152 +99,207 @@ div.intro {
 	h2 {
 		color: #999;
 		margin-top: 10px;
-		margin-bottom: 50px;
+		margin-bottom: 40px;
 	}
 
 	h3 {
 		letter-spacing: 0.06em;
+		line-height: 130%;
 		margin-top: 30px;
 		font-size: 1.4em;
 		font-weight: 300;
 	}
 
 	div.buttons {
-		margin-top: 60px;
-
-		.btn {
-			padding: 10px 20px;
-			padding-right: 18px;
-			font-size: 1.3em;
-		}
+		margin-top: 50px;
 	}
 }
 
-div.features {
-	background-color: #e3e6e9;
-	padding-top: 40px;
-	padding-bottom: 40px;
+div.buttons .btn {
+	padding: 10px 20px;
+	padding-right: 18px;
+	font-size: 1.3em;
+}
 
-	h1 {
-		font-size: 1.4em;
-		font-weight: 700;
-		margin: 0;
+$section-padding: 60px;
+
+.section {
+	padding-top: $section-padding;
+	padding-bottom: $section-padding;
+
+	&:nth-child(even) {
+		background-color: #fff;
 	}
 
-	ul.items {
-		color: #444;
-		margin: 0;
-		padding: 0;
+	&:nth-child(odd) {
+		background-color: #f0f0f0;
+	}
 
-		li {
-			display: inline;
-			list-style-type: none;
-			font-size: 2.7em;
-			font-weight: 700;
-			margin-left: 10px;
-			margin-right: 10px;
+	h1 {
+		color: #4f5963; 
+		font-size: 2.0em;
+		font-weight: bold;
+		margin-bottom: $section-padding;
+		text-align: center;
+	}
+
+	.alternate .demo:nth-child(odd) {
+		.description {
+			order: 12;
 		}
 	}
 
-	img {
-		height: 48px;
-		margin-top: 8px;
-		margin-bottom: 8px;
-	}
+	.demo {
+		@include make-row();
 
-	.integrations {
-		ul.items {
-			li {
-				margin-left: 15px;
-				margin-right: 15px;
+		margin-bottom: $section-padding;
+		padding-bottom: 24px;
+		padding-top: 12px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.description, .visual {
+			@include make-col-ready();
+			@include media-breakpoint-up(lg) {
+				@include make-col(6);
 			}
 		}
 
-		@include media-breakpoint-up(md) {
-			font-size: 0.9em;
-		}
-
-		@include media-breakpoint-up(lg) {
-			font-size: 1.0em;
-		}
-	}
-
-	// .stack {
-	//   img {
-	//     margin-top: 0px;
-	//     margin-bottom: 8px;
-	//   }
-	// }
-
-	.compliance {
-		.card-body {
-			font-size: 0.8em;
-			margin-bottom: 6px;
-			margin-top: 6px;
-		}
-
-		ul.items {
-			i {
-				font-size: 0.9em;
-			}
-		}
-	}
-}
-
-div.feature {
-	background-color: #fff;
-	h1 {
-		font-size: 1.4em;
-		font-weight: 700;
-		margin: 0;
-	}
-}
-
-div.feature-image {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	background-color: #fff;
-	img {
-		width: 100%;
-		@include media-breakpoint-up(lg) {
-			width: 600px;
-		}
-	}
-}
-
-div.feature-desc {
-	background-color: #fff;
-	border: none;
-}
-
-div.checklist {
-	ul.features {
-		padding: 8px;
-		i {
-			padding-left: 10px;
+		.description {
+			padding-left: 20px;
 			padding-right: 20px;
+
+			margin-top: 24px;
+
+			@include media-breakpoint-up(lg) {
+				margin-top: 0;
+			}
+
+			h2 {
+				color: rgb(48,55,62);
+				font-size: 1.5em;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+
+			p {
+				color: #555;
+			}
 		}
-		li {
-			letter-spacing: 0.06em;
-			font-size: 1.4em;
-			font-weight: 300;
+
+		ul {
+			list-style-type: none;
+			padding-left: 0;
+
+			i.far {
+				margin-right: 8px;
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.screenshot {
+			border: 1px #ccc solid;
+		}
+	}
+
+	.clouds {
+		@include make-row();
+
+		.cloud {
+			@include make-col-ready();
+			@include media-breakpoint-up(md) {
+				@include make-col(6);
+			}
+			@include media-breakpoint-up(lg) {
+				@include make-col(3);
+			}
+
+			color: #777;
+			font-size: 1.0em;
+			font-weight: bold;
+			padding-left: 36px;
+			padding-right: 36px;
+			margin-top: 16px;
+			margin-bottom: 16px;
+			text-align: center;
+
+			@include media-breakpoint-up(lg) {
+				margin-top: 8px;
+				margin-bottom: 8px;
+			}
+
+			a {
+				display: block;
+				margin-bottom: 6px;
+
+				i {
+					margin-right: 4px;
+				}
+			}
+		}
+	}
+
+	.features {
+		@include make-row();
+
+		&.features-3 .feature {
+			@include media-breakpoint-up(lg) {
+				@include make-col(4);
+			}
+		}
+
+		&.features-4 .feature {
+			@include media-breakpoint-up(md) {
+				@include make-col(6);
+			}
+			@include media-breakpoint-up(lg) {
+				@include make-col(3);
+			}
+		}
+
+		.feature {
+			@include make-col-ready();
+
+			margin-top: 16px;
+			margin-bottom: 16px;
+
+			@include media-breakpoint-up(lg) {
+				margin-top: 8px;
+				margin-bottom: 8px;
+			}
+
+			h2 {
+				font-size: 1.5em;
+				font-weight: bold;
+				margin-bottom: 16px;
+				text-align: center;
+
+				i {
+					margin-right: 4px;
+					font-size: 0.8em;
+				}
+			}
+
+			p {
+				color: #555;
+				padding-left: 8px;
+				padding-right: 8px;
+				text-align: center;
+			}
 		}
 	}
 }
+
 
 div.customers {
-	background-color: #fff;
-	padding-top: 40px;
-	padding-bottom: 40px;
-
-	h1 {
-		color: #555;
-		font-size: 2.2rem;
-		margin: 0;
-		margin-bottom: 50px;
-	}
-
 	ul.logos {
 		padding: 0;
+		padding-top: 20px;
 
 		li {
 			display: inline-block;
@@ -228,14 +321,28 @@ div.customers {
 }
 
 div.quotes {
-	background-color: #e3e6e9;
-	padding-top: 40px;
-	padding-bottom: 20px;
-
 	.blockquote {
+		padding-left: 30px;
+		padding-right: 30px;
+		text-align: justify;
+
+		margin-top: 28px;
+		margin-bottom: 28px;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 16px;
+			margin-bottom: 30px;
+		}
+
 		.blockquote-footer {
 			margin-top: 10px;
 		}
+	}
+}
+
+div.signup {
+	h1 {
+		margin-bottom: 40px;
 	}
 }
 
@@ -273,7 +380,7 @@ div.enterprise-intro {
 
 
 	h1, h2 {
-		letter-spacing: 0.08em;
+		letter-spacing: 0.05em;
 	}
 
 	h1 {
@@ -477,21 +584,21 @@ body.pricing {
 	background-color: #fff;
 }
 
-section.general {
-	h1 {
-		color: #444;
-		font-size: 2.2em;
-		font-weight: 700;
-		letter-spacing: 0.6;
-	}
+// section.general {
+// 	h1 {
+// 		color: #444;
+// 		font-size: 2.2em;
+// 		font-weight: 700;
+// 		letter-spacing: 0.6;
+// 	}
 
-	h2 {
-		font-size: 1.3em;
-		font-weight: 700;
-		letter-spacing: 0.3;
-		margin-bottom: 24px;
-	}
-}
+// 	h2 {
+// 		font-size: 1.3em;
+// 		font-weight: 700;
+// 		letter-spacing: 0.3;
+// 		margin-bottom: 24px;
+// 	}
+// }
 
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';

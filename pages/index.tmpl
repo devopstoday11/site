@@ -1,4 +1,4 @@
-{{ define "content" }}
+{{ define "content"}}
 
 	<div class="intro">
 		<div class="container">
@@ -6,81 +6,181 @@
 				<div class="col-12 col-lg-6 col-xl-5 col-xxl-6">
 					<h1>Build Apps</h1>
 					<h2>Not Infrastructure</h2>
-					<h3>
-						Deploy any application to the cloud with a single command.
-					</h3>
-					<h3>
-						Onboard new developers in minutes.
-					</h3>
+					<h3>Deploy, scale, and manage your applications with ease on a Kubernetes-based open source platform</h3>
+					<h3>Onboard new developers in minutes</h3>
 					<div class="buttons">
-						<a class="btn btn-primary text-light" href="https://console.convox.com/signup">
+						<a class="btn btn-primary text-light mr-2" href="https://docs.convox.com">
 							Get Started
 							<i class="far fa-arrow-alt-circle-right ml-1"></i>
+						</a>
+						<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+						<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+						<a class="btn btn-primary text-light ml-2 mr-2" href=""
+							onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cameron-convox/30min'});return false;">
+							Schedule a Demo
+							<i class="fas fa-desktop ml-1"></i>
 						</a>
 					</div>
 				</div>
 				<div class="col-12 col-lg-6 col-xl-7 col-xxl-6 pt-5 pt-lg-0">
-					<div class="text-right cli" style="background-color: rgb(18,24,31); border-radius: 8px; padding: 12px">
+					<div class="text-right terminal">
 						<img src="/images/terminals/intro.gif" style="width: 100%;">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="features">
+	<div class="section">
 		<div class="container">
-			<div class="row">
-				<div class="col-12 col-xl-5 col-xxl-7">
-					<div class="card integrations">
-						<div class="card-header">
-							<h1>Simple Integrations</h1>
-						</div>
-						<div class="card-body">
-							<ul class="items d-flex flex-wrap align-items-center justify-content-around">
-								<li><i class="fab fa-aws"></i>
-								<li><img src="/images/integrations/circleci.png"></i>
-								<li><img src="/images/integrations/datadog.png"></i>
-								<li><i class="fab fa-github"></i>
-								<li><i class="fab fa-gitlab"></i>
-								<li><img src="/images/integrations/papertrail.png"></i>
-								<li><i class="fab fa-slack"></i>
-								<li><img src="/images/integrations/travisci.png"></i>
-							</ul>
-						</div>
+			<h1>Everything you need to deploy and manage your applications</h1>
+			<div class="demo">
+				<div class="visual">
+					<div class="terminal">
+						<pre class="input">$ convox rack install aws production</pre>
+						<pre>Initializing aws... OK</pre>
+						<pre>Installing rack... OK</pre>
+						<pre>Switching to production... OK</pre>
 					</div>
 				</div>
-				<div class="col-12 col-md-4 col-xl-3 col-xxl-2 pt-4 pt-xl-0">
-					<div class="card stack">
-						<div class="card-header">
-							<h1>Modern Stack</h1>
-						</div>
-						<div class="card-body">
-							<ul class="items d-flex justify-content-around">
-								<li><i class="fab fa-docker" style="margin-top: 12px;"></i>
-								<li><img src="/images/integrations/kubernetes.png"></i>
-							</ul>
-						</div>
+				<div class="description">
+					<h2>Painless Installation</h2>
+					<p>Install a Kubernetes cluster onto any cloud with a single command</p>
+					<p>Built using Terraform modules so you can easily customize anything to suit your needs</p>
+				</div>
+			</div>
+			<div class="demo">
+				<div class="visual">
+					<div class="terminal">
+						<pre class="input">$ convox racks</pre>
+						<pre>NAME        PROVIDER  STATUS</pre>
+						<pre>dev         local     running</pre>
+						<pre>production  aws       running</pre>
+						<pre>staging     gcp       running</pre>
 					</div>
 				</div>
-				<div class="col-12 col-md-8 col-xl-4 col-xxl-3 pt-4 pt-xl-0">
-					<div class="card compliance">
-						<div class="card-header">
-							<h1>Instant Compliance</h1>
-						</div>
-						<div class="card-body">
-							<ul class="items d-flex justify-content-around">
-								<li><i class="far fa-check-square mr-2 text-success"></i>HIPAA</li>
-								<li><i class="far fa-check-square mr-2 text-success"></i>PCI</li>
-							</ul>
-						</div>
+				<div class="description">
+					<h2>Simple Cluster Management</h2>
+					<p>Easily manage deployment environments on any cloud</p>
+					<p>Want to run production on AWS and staging on GCP? We've got you covered</p>
+					<p>Create seamless CI pipelines that span clouds</p>
+				</div>
+			</div>
+			<div class="demo">
+				<div class="visual">
+					<div class="terminal small">
+						<pre class="input">$ convox env set PASSWORD=hunter2</pre>
+						<pre>Setting PASSWORD... OK</pre>
+						<pre> </pre>
+						<pre class="input">$ convox releases</pre>
+						<pre>ID       STATUS  BUILD    CREATED       DESCRIPTION</pre>
+						<pre>RBCDEFG  active  BZYXWVU  1 second ago  env change:PASSWORD</pre>
+						<pre>RABCDEF          BZYXWVU  2 hours ago   git:19bcd2 update header</pre>
+						<pre> </pre>
+						<pre class="input">$ convox releases rollback RABCDEF</pre>
+						<pre>Rolling back to RABCDEF... OK</pre>
 					</div>
+				</div>
+				<div class="description">
+					<h2>Seamless Deployments</h2>
+					<p>Every change to your application creates a unique deployable release</p>
+					<p>Rolling deploys ensure updates with zero downtime</p>
+					<p>Rollback to a previous release with one command</p>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="customers d-block">
+	<div class="section">
+		<div class="container">
+			<h1>Support for every cloud your team is using</h1>
+			<div class="clouds">
+				<div class="cloud">
+					<a class="btn btn-primary text-light" href="https://docs.convox.com">
+						<i class="fab fa-aws"></i>
+						Get Started
+					</a>
+					Amazon Web Services
+				</div>
+				<div class="cloud">
+					<a class="btn btn-primary text-light" href="https://docs.convox.com">
+						<i class="fab fa-digital-ocean"></i>
+						Get Started
+					</a>
+					Digital Ocean
+				</div>
+				<div class="cloud">
+					<a class="btn btn-primary text-light" href="https://docs.convox.com">
+						<i class="fab fa-google"></i>
+						Get Started
+					</a>
+					Google Cloud
+				</div>
+				<div class="cloud">
+					<a class="btn btn-primary text-light" href="https://docs.convox.com">
+						<i class="fab fa-windows"></i>
+						Get Started
+					</a>
+					Microsoft Azure
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<h1>Enhanced features with Convox for Teams</h1>
+			<div class="features features-4">
+				<div class="feature">
+					<h2>
+						<i class="fas fa-id-badge"></i>
+						Access Control
+					</h2>
+					<p>
+						Role-based access control and SSO lets your team collaborate securely
+					</p>
+				</div>
+				<div class="feature">
+					<h2>
+						<i class="fas fa-scroll"></i>
+						Audit Trail
+					</h2>
+					<p>
+						Detailed logs of every change to meet your accountability requirements
+					</p>
+				</div>
+				<div class="feature">
+					<h2>
+						<i class="fas fa-shield-alt"></i>
+						Instant Compliance
+					</h2>
+					<p>
+						Self-hosted option makes it easy to satisfy GDPR, HIPAA, PCI, or SOC2
+					</p>
+				</div>
+				<div class="feature">
+					<h2>
+						<i class="fas fa-life-ring"></i>
+						Support and SLA
+					</h2>
+					<p>
+						24/7 on-call support available so you can get help when you need it
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container text-center buttons">
+			<a class="btn btn-primary text-light ml-2 mr-2" href="https://docs.convox.com">
+				Get Started
+				<i class="far fa-arrow-alt-circle-right ml-1"></i>
+			</a>
+			<a class="btn btn-primary text-light ml-2 mr-2" href=""
+				onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cameron-convox/30min'});return false;">
+				Schedule a Demo
+				<i class="fas fa-desktop ml-1"></i>
+			</a>
+		</div>
+	</div>
+	<div class="section customers">
 		<div class="container text-center">
 			<h1>Trusted by technology leaders at companies of every size</h1>
 			<ul class="logos">
@@ -105,16 +205,12 @@
 					<p>Fixd</p>
 				</li>
 				<li>
-					<img src="/images/logos/havenlife.png">
-					<p>Haven Life</p>
+					<img src="/images/logos/fs-logo-black.png">
+					<p>Flipside Crypto</p>
 				</li>
 				<li>
 					<img src="/images/logos/managedbyq.png">
 					<p>Managed by Q</p>
-				</li>
-				<li>
-					<img src="/images/logos/podium.png">
-					<p>Podium</p>
 				</li>
 				<li>
 					<img src="/images/logos/schibsted.png">
@@ -123,6 +219,10 @@
 				<li>
 					<img src="/images/logos/statflo.png">
 					<p>Statflo</p>
+				</li>
+				<li>
+					<img src="/images/logos/teespring.png">
+					<p>Teespring</p>
 				</li>
 				<li>
 					<img src="/images/logos/wave.png">
@@ -135,24 +235,56 @@
 			</ul>
 		</div>
 	</div>
-
-	<div class="quotes d-block">
+	<div class="section quotes">
 		<div class="container text-center">
 			<div class="row">
-				<blockquote class="blockquote col-12 col-lg-4 pr-lg-5">
-					Having Convox on board has freed up roughly 25% of our engineer's time every week. The level of service they provide is truly astounding.
-					<footer class="blockquote-footer">Arthur Weagel, <cite>Podium</cite></footer>
+				<blockquote class="blockquote col-12 col-lg-4">
+					Convox made it possible for us to distribute dev-ops responsibilities from one individual to the entire
+					team.
+					Their platform makes it super simple for our developers to fully manage their applications in production
+					without the operational overhead of managing Kubernetes
+					<footer class="blockquote-footer">Jim Myers, <cite>Flipside Crypto</cite></footer>
 				</blockquote>
-				<blockquote class="blockquote col-12 col-lg-4 pt-4 pt-lg-0">
-					The Convox advantage is that operations work is reduced to an absolute minimum. We used to have an extra consultant just to keep our servers safe, taking care of updates, logs and backups, whereas now our developers manage the entire infrastructure by themselves.	
-					<footer class="blockquote-footer">Cesare Navorotto, <cite>Monrif</cite></footer>
-				</blockquote>
-				<blockquote class="blockquote col-12 col-lg-4 pt-4 pt-lg-0 pl-lg-5">
-					Convox helped us migrate everything to AWS quicker than I ever thought was possible. Unlocking all the advantages of the cloud through Convox is easily one of the best decisions we made.
+				<blockquote class="blockquote col-12 col-lg-4">
+					Convox helped us migrate everything to AWS quicker than I ever thought was possible. Unlocking all the
+					advantages of the cloud through Convox is easily one of the best decisions we made.
 					<footer class="blockquote-footer">Ryan Jackson, <cite>Paid Labs</cite></footer>
+				</blockquote>
+				<blockquote class="blockquote col-12 col-lg-4">
+					The Convox advantage is that operations work is reduced to an absolute minimum. We used to have an extra
+					consultant just to keep our servers safe, taking care of updates, logs and backups, whereas now our
+					developers manage the entire infrastructure by themselves.
+					<footer class="blockquote-footer">Cesare Navorotto, <cite>Monrif</cite></footer>
 				</blockquote>
 			</div>
 		</div>
 	</div>
-
+	<div class="section signup">
+		<h1>Subscribe to the Convox Newsletter</h1>
+		<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			#mc_embed_signup {
+				background: #fff;
+				clear: left;
+				font: 14px Helvetica, Arial, sans-serif;
+				width: 100%;
+			}
+		</style>
+		<div id="mc_embed_signup">
+			<form
+				action="https://convox.us10.list-manage.com/subscribe/post?u=55a0526a0c4fd5e0010c9bae3&amp;id=69fa821fe6"
+				method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+				target="_blank" novalidate>
+				<div id="mc_embed_signup_scroll">
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+					<div style="position: absolute; left: -5000px;" aria-hidden="true">
+						<input type="text" name="b_55a0526a0c4fd5e0010c9bae3_69fa821fe6" tabindex="-1" value="">
+					</div>
+					<div class="clear">
+						<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 {{ end }}

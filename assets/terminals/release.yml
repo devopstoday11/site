@@ -1,0 +1,74 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+  command: bash -l
+  cwd: .
+  env:
+
+  cols: 100
+  rows: 10
+  repeat: -1
+  quality: 100
+  frameDelay: 0
+  maxIdleTime: auto
+
+  cursorStyle: block
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  fontSize: 24
+  lineHeight: 1
+  letterSpacing: 0
+
+  frameBox:
+    type: null
+    title: null
+    style:
+      backgroundColor: rgb(18,24,31)
+      border: 0px black solid
+      margin: 0px
+
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  theme:
+    background: "transparent"
+    foreground: "#cccccc"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+records:
+  - delay: 0
+    content: "\e[38;5;15m$ convox env set PASSWORD=hunter2\e[0m\r\n"
+  - delay: 0
+    content: "Setting PASSWORD... OK\r\n"
+  - delay: 0
+    content: "\r\n\e[38;5;15m$ convox releases\e[0m\r\n"
+  - delay: 0
+    content: "ID          STATUS  BUILD        CREATED      DESCRIPTION\r\n"
+  - delay: 0
+    content: "RABCDEFGHI  active  BZYXWVUTSRQ  2 hours ago  env change:PASSWORD\r\n"
+  - delay: 0
+    content: "RBCDEFGHIJ          BZYXWVUTSRQ  4 hours ago  push convox/site:master 19bcd24f8aa update header\r\n"
+  - delay: 0
+    content: "\r\n\e[38;5;15m$ convox releases rollback RBCDEFGHIJ\e[0m\r\n"
+  - delay: 0
+    content: "Rolling back to RBCDEFGHIJ... OK"

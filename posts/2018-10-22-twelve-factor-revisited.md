@@ -13,7 +13,7 @@ In that time Convox has come a long way as well and we have made building 12 fac
 <!--more-->
 
 ### I. Codebase: - One codebase tracked in revision control, many deploys
-This one seems pretty straightforward. If your team isn't using source control just stop reading now and go fix that! That said, in world of microservices and distributed applications it is important to remind ourselves that each app should have its own repository and shared code should be consolidated into libraries. Convox makes tying this all together easy using [workflows](https://docs.convox.com/console/workflows) and our [integrations](https://docs.convox.com/console/integrations) with Github and GitLab
+This one seems pretty straightforward. If your team isn't using source control just stop reading now and go fix that! That said, in world of microservices and distributed applications it is important to remind ourselves that each app should have its own repository and shared code should be consolidated into libraries. Convox makes tying this all together easy using [workflows](https://docsv2.convox.com/console/workflows) and our [integrations](https://docsv2.convox.com/console/integrations) with Github and GitLab
 
 ### II. Dependencies: - Explicitly declare and isolate dependencies
 This is one of the most misunderstood factors. The aspect of this that we think is critical is:
@@ -22,7 +22,7 @@ This is one of the most misunderstood factors. The aspect of this that we think 
 
 This rule leads to why we believe containers are the right way to  build apps. A container is explicitly defined and configured. Using Docker features such as [base images](https://docs.docker.com/develop/develop-images/baseimages/) can help you package up and share common dependencies.
 
-Convox takes this principle one step further by introducing the [convox.yml](https://docs.convox.com/application/convox-yml) manifest which allows you to explicitly define your application including the entire set of services and resources that work together to support it. Paired with a [local rack](https://docs.convox.com/development/running-locally), you can ensure that all your developers have identical development environments and that those environments precisely mirror production.
+Convox takes this principle one step further by introducing the [convox.yml](https://docsv2.convox.com/application/convox-yml) manifest which allows you to explicitly define your application including the entire set of services and resources that work together to support it. Paired with a [local rack](https://docsv2.convox.com/development/running-locally), you can ensure that all your developers have identical development environments and that those environments precisely mirror production.
 
 With Convox, a new developer on your team simply needs to pull your latest code, and run `convox start` to boot the application and immediately start being productive.
 
@@ -36,18 +36,18 @@ Most applications these days make use of a database or other external services s
 
 The benefits of this approach become clear when you think about how in a local development environment you might be using database server running in a docker container while in production you are more likely connecting to a service such as [RDS](https://aws.amazon.com/rds/). If you use URL connection strings stored in the environment  your code will seamlessly move from local to production. This will also make it much easier to perform a database recovery or upgrade.
 
-Convox makes this seamless. When you define a database resource in your [convox.yml](https://docs.convox.com/reference/convox-yml) Convox automatically spins up a container running the requested database when running locally and injects the URL to that resource into the environment. When you deploy your application to production Convox will automatically provision the required database resource on RDS and inject that URL instead.
+Convox makes this seamless. When you define a database resource in your [convox.yml](https://docsv2.convox.com/reference/convox-yml) Convox automatically spins up a container running the requested database when running locally and injects the URL to that resource into the environment. When you deploy your application to production Convox will automatically provision the required database resource on RDS and inject that URL instead.
 
-Convox provides a robust set of [resources](https://docs.convox.com/application/resources), as well as the ability to proxy to [remote resources](https://docs.convox.com/management/resources), for teams with more complex needs.
+Convox provides a robust set of [resources](https://docsv2.convox.com/application/resources), as well as the ability to proxy to [remote resources](https://docsv2.convox.com/management/resources), for teams with more complex needs.
 
 ### V. Build, release, run: - Strictly separate build and run stages
 The twelve-factor approach dictates separating a production deploy into the three distinct stages of Build, Release and Run. The critical aspect of these stages is that building a release should be a separate task from running a release.
 
-* In the build stage you are compiling your code from source into a single deployable unit. For a containerized application, this means creating an image. On Convox this is as simple as running `convox build` in a directory containing your code or create a [workflow](https://docs.convox.com/console/workflows) to build automatically when you push new code to github or gitlab.
+* In the build stage you are compiling your code from source into a single deployable unit. For a containerized application, this means creating an image. On Convox this is as simple as running `convox build` in a directory containing your code or create a [workflow](https://docsv2.convox.com/console/workflows) to build automatically when you push new code to github or gitlab.
 
-* For the release stage, Convox combines your build with the application's current environment to create a [release](https://docs.convox.com/deployment/releases). Using atomic releases makes it incredibly easy to roll back to a previous version of your application if a problem is detected.
+* For the release stage, Convox combines your build with the application's current environment to create a [release](https://docsv2.convox.com/deployment/releases). Using atomic releases makes it incredibly easy to roll back to a previous version of your application if a problem is detected.
 
-* In the run stage you are promoting a specific release to become the currently running version of your application. Convox handles releases with a [rolling deployment](https://docs.convox.com/deployment/rolling-updates) where new processes must check-in as healthy before they will start receiving traffic and old processes are terminated as the new processes are available. This provides you a great deal of security because code that does not pass a health check will never make it live.
+* In the run stage you are promoting a specific release to become the currently running version of your application. Convox handles releases with a [rolling deployment](https://docsv2.convox.com/deployment/rolling-updates) where new processes must check-in as healthy before they will start receiving traffic and old processes are terminated as the new processes are available. This provides you a great deal of security because code that does not pass a health check will never make it live.
 
 ### VI. Processes: - Execute the app as one or more stateless processes
 One of the core aspects of running a containerized application is that the individual containers should all be treated as stateless. Having stateless containers allows you to scale your application up and down at will without negatively impacting the end users experience. Stateless containers also prevent a container failure from causing data loss.
@@ -61,12 +61,12 @@ This principle is something that most developers probably don't spend a lot of t
 
 Overall this approach creates a simple, modular application, that is easy to scale and can be easily added as a resources to a larger system if need be. When creating a composite system made up of multiple applications or services, if each part exposes a single URL or port it’s much easier to tie all the pieces together.
 
-With Convox you define what [ports](https://docs.convox.com/application/port) your application listens on in your convox.yml file and Convox will automatically create an [application load balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) including provisioning any required [SSL](https://docs.convox.com/deployment/ssl) certificates so you can ensure your application is secure and only listening on the ports you want it to.
+With Convox you define what [ports](https://docsv2.convox.com/application/port) your application listens on in your convox.yml file and Convox will automatically create an [application load balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) including provisioning any required [SSL](https://docsv2.convox.com/deployment/ssl) certificates so you can ensure your application is secure and only listening on the ports you want it to.
 
 ### VIII. Concurrency: - Scale out via the process model
 With your application now composed of dependency-isolated processes that are exposing a single port, it becomes easy to horizontally scale your application by simply adding more copies of each service.
 
-Convox allows you define multiple services in your convox.yml manifest and [scale](https://docs.convox.com/deployment/scaling) them independently. Convox also makes it easy to setup autoscaling based on metrics such as CPU load or targeted requests per minute.
+Convox allows you define multiple services in your convox.yml manifest and [scale](https://docsv2.convox.com/deployment/scaling) them independently. Convox also makes it easy to setup autoscaling based on metrics such as CPU load or targeted requests per minute.
 
 ### IX. Disposability: - Maximize robustness with fast startup and graceful shutdown
 In a world of rolling deployments, autoscaling, and one click rollbacks it's critical that your applications startup quickly and shutdown gracefully.
@@ -76,7 +76,7 @@ How many times have you finished a feature only to have it fail spectacularly du
 
 Many platforms that make it easy to deploy your application to production leave you completely on your own to figure out local development. At Convox we believe dev/prod parity is fundamental to modern application development. That's why we use a single manifest file to describe your application for both local development and production.
 
-For resources where it's simply not practical to run them in a local docker container, we offer [remote resources](https://docs.convox.com/development/remote-resources) where you can connect your local environment with remote services via a secure proxy.
+For resources where it's simply not practical to run them in a local docker container, we offer [remote resources](https://docsv2.convox.com/development/remote-resources) where you can connect your local environment with remote services via a secure proxy.
 
 ### XI. Logs: - Treat logs as event streams
 With the ephemeral nature of containers, it's important to not store things you might need in the future on the local filesystem. This is particularly important for logs. In a world where our application is made up of many containers running on many hosts, you need to be able to look at your application holistically by aggregating the logs to get an accurate view of what's happening.
@@ -89,10 +89,10 @@ There are many reasons you might need to run a one-off task within your applicat
 
 The critical principle is that these tasks should not be run on the same processes that are handling your everyday traffic. Instead, you should fire up a one-off process using an identical release (code+environment) to prevent one off tasks from causing issues with your running applications. If you take this approach one step further you can run a one-off tasks against any release, including a release that is not yet promoted, which allows you to do things like run migrations before you release allowing zero-downtime deploys.
 
-Convox makes this easy with [scheduled tasks](https://docs.convox.com/gen1/scheduled-tasks) and [one-off commands](https://docs.convox.com/management/one-off-commands) including support for backgrounding processes for those long running data science jobs!
+Convox makes this easy with [scheduled tasks](https://docsv2.convox.com/gen1/scheduled-tasks) and [one-off commands](https://docsv2.convox.com/management/one-off-commands) including support for backgrounding processes for those long running data science jobs!
 
 ### What's next?
-While frameworks, container strategies, and other application development trends come and go, the twelve-factor approach appears to be standing the test of time. At Convox, we remain all in on twelve-factor and we continue to improve our platform to make it even easier to develop 12 factor apps. We are particularly focused on improving [workflows](https://docs.convox.com/console/workflows) for even faster and smoother deployments.
+While frameworks, container strategies, and other application development trends come and go, the twelve-factor approach appears to be standing the test of time. At Convox, we remain all in on twelve-factor and we continue to improve our platform to make it even easier to develop 12 factor apps. We are particularly focused on improving [workflows](https://docsv2.convox.com/console/workflows) for even faster and smoother deployments.
 
 Our goal is to gently enforce these principles for you starting with your first line of code, so that deploying to production feels no more complicated than developing on your local machine.
 

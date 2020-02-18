@@ -6,7 +6,7 @@ tags: [Github Actions, Convox, ECS, EKS, Google Cloud, GCP, Digital Ocean, Kuber
 description: Introducing a complete set of Github Actions from Convox allowing you to easily to deploy to AWS, Google Cloud, or Digital Ocean
 ---
 
-Today we are pleased to announce the official release of our [Convox Github Actions](https://github.com/marketplace/actions/convox-deploy). With these actions you can easily create a fully-featured CI/CD pipeline for the cloud of your choice. All you need to do is [install a Convox Rack](https://github.com/convox/installer) for a cloud provider, and create a [convox.yml](https://docs.convox.com/application/convox-yml) to describe your app and you will be ready to start deploying. For a basic primer on how Github Actions work you can read more [here](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/getting-started-with-github-actions).
+Today we are pleased to announce the official release of our [Convox Github Actions](https://github.com/marketplace/actions/convox-deploy). With these actions you can easily create a fully-featured CI/CD pipeline for the cloud of your choice. All you need to do is [install a Convox Rack](https://github.com/convox/installer) for a cloud provider, and create a [convox.yml](https://docsv2.convox.com/application/convox-yml) to describe your app and you will be ready to start deploying. For a basic primer on how Github Actions work you can read more [here](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/getting-started-with-github-actions).
 
 The set of actions we have created should be everything you need to build, deploy, and manage your app. They can be combined to enable a wide variety of workflows. These actions work on all Convox Racks on AWS(ECS or EKS), Google Cloud, Digital Ocean, and more to come. The actions are as follows:
 ## Actions
@@ -14,19 +14,19 @@ The set of actions we have created should be everything you need to build, deplo
 This action authenticates your [Convox Account](https://console.convox.com/signup) and sets login credentials for all subsequent actions.
 
 ### [Build](https://github.com/convox/action-build)
-This action [builds](https://docs.convox.com/deployment/builds) your Dockerfile and processes your convox.yml to create a promotable Convox release. 
+This action [builds](https://docsv2.convox.com/deployment/builds) your Dockerfile and processes your convox.yml to create a promotable Convox release. 
 
 ### [Run](https://github.com/convox/action-run)
-This action [runs a command](https://docs.convox.com/management/one-off-commands) using a previously built release either before or after it’s promoted in your Convox Rack. This action is very handy for things like running migrations before promoting or running a cleanup or notification command after promoting.
+This action [runs a command](https://docsv2.convox.com/management/one-off-commands) using a previously built release either before or after it’s promoted in your Convox Rack. This action is very handy for things like running migrations before promoting or running a cleanup or notification command after promoting.
 
 ### [Promote](https://github.com/convox/action-promote)
-This action [promotes a release](https://docs.convox.com/deployment/releases#promoting-a-release) and performs a rolling deploy of your application. 
+This action [promotes a release](https://docsv2.convox.com/deployment/releases#promoting-a-release) and performs a rolling deploy of your application. 
 
 ### [Deploy](https://github.com/convox/action-deploy)
 This action performs the build and promote steps in a single action. You can use this when you don’t need to run migrations or perform any other steps between building and promoting.
 
 ## Building a Deployment Workflow with Convox Github Actions 
-Let’s take the scenario where we have a [Rails app](https://github.com/convox-examples/rails) and we want to build it, run migrations, and then promote on our staging Rack. The first thing we will need to do is grab our [Convox Deploy Key](https://docs.convox.com/console/deploy-keys) and create a [Github encrypted secret](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets) called `CONVOX_DEPLOY_KEY` with its value. Now all we need to do is create a `.github/workflows/deploy.yml` in our repo that looks something like:
+Let’s take the scenario where we have a [Rails app](https://github.com/convox-examples/rails) and we want to build it, run migrations, and then promote on our staging Rack. The first thing we will need to do is grab our [Convox Deploy Key](https://docsv2.convox.com/console/deploy-keys) and create a [Github encrypted secret](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets) called `CONVOX_DEPLOY_KEY` with its value. Now all we need to do is create a `.github/workflows/deploy.yml` in our repo that looks something like:
 ```
 name: CD
 on: [push]

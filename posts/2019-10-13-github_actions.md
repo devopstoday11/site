@@ -18,11 +18,11 @@ For a Job you also need to define two things. The first is `runs-on` which defin
 
 For a step you will need to define at least one Action or Command. An action is a piece of reusable code defined in either a Javascript File or a Docker Container. A command is any shell command that can be executed in one of the available shells for the specified Virtual Environment.
 
-For our example we have a simple node.js app that we want to build and deploy to our Convox Rack running on ECS every time there is a new push. Because Convox supports [Deploy Keys](https://docs.convox.com/console/deploy-keys) it's relatively simple to deploy an app to a Convox Rack running on either ECS or EKS from almost any CI/CD platform including Github Actions. In order to do this we will need a Linux virtual machine to execute the following steps:
+For our example we have a simple node.js app that we want to build and deploy to our Convox Rack running on ECS every time there is a new push. Because Convox supports [Deploy Keys](https://docsv2.convox.com/console/deploy-keys) it's relatively simple to deploy an app to a Convox Rack running on either ECS or EKS from almost any CI/CD platform including Github Actions. In order to do this we will need a Linux virtual machine to execute the following steps:
 
 1. Checkout the latest version of the branch
 
-2. [Install the Convox CLI](https://docs.convox.com/introduction/installation)
+2. [Install the Convox CLI](https://docsv2.convox.com/introduction/installation)
 
 3. Build and Deploy our application to our specific Rack using our secret deploy key
 
@@ -58,7 +58,7 @@ Looking through this we are kicking our workflow off with the “push” event. 
 
 1. “Checkout” which uses the reusable [actions/checkout@v1 Action](https://github.com/actions/checkout) created and maintained by Github.
 
-2. “Install Convox CLI” which runs a set of bash commands to install the Convox CLI in the virtual environment following our [standard Linux installation steps](https://docs.convox.com/introduction/installation#linux).
+2. “Install Convox CLI” which runs a set of bash commands to install the Convox CLI in the virtual environment following our [standard Linux installation steps](https://docsv2.convox.com/introduction/installation#linux).
 
 3. “Deploy” which runs the Convox deploy command passing in the required environment variables so the deploy command has everything it needs.
 

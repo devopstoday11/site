@@ -28,7 +28,7 @@ Rack sharing is a free feature of Grid. We have many plans for enhancements such
 
 Continuous integration / continuous delivery workflows are very popular, and we at Convox believe that you should never do something manually when it can be automated. Grid works with GitHub to make these kinds of workflows easy to set up.
 
-You can [sign up to Grid](https://console.convox.com/grid/signup) using your Github account or [link your existing Grid account to GitHub](https://docs.convox.com/console/integrations). Once you're linked you can easily add GitHub webhooks to any of your Convox apps.
+You can [sign up to Grid](https://console.convox.com/grid/signup) using your Github account or [link your existing Grid account to GitHub](https://docsv2.convox.com/console/integrations). Once you're linked you can easily add GitHub webhooks to any of your Convox apps.
 
 Webhooks can trigger automatic builds and deployments to your Convox app when you push Code to master on GitHub. We're working on more triggers -- such as pushes to branches and commit status changes -- that will enable even more powerful CI workflows, so stay tuned.
 

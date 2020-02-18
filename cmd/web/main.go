@@ -105,7 +105,7 @@ func post(c *stdapi.Context) error {
 		"Active":      "blog",
 		"Post":        p,
 		"Title":       p.Title,
-		"URL":         fmt.Sprintf("https://%s/blog/%s", c.Request().Host, p.Slug),
+		"URL":         fmt.Sprintf("https://%s/blog/%s", os.Getenv("HOST"), p.Slug),
 		"Description": p.Description,
 		"OgImage":     p.OgImage,
 		"Tags":        p.Tags,

@@ -3,7 +3,6 @@ services:
     build: .
     domain: ${DOMAIN}
     environment:
-      - SEGMENT_TOKEN
-      - HOST
+      - SEGMENT_TOKEN=
     health: /check
     port: https:3000

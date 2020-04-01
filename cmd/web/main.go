@@ -56,6 +56,16 @@ func run() error {
 	return nil
 }
 
+func coalesce(ss ...string) string {
+	for _, s := range ss {
+		if s != "" {
+			return s
+		}
+	}
+
+	return ""
+}
+
 func helpers(c *stdapi.Context) template.FuncMap {
 	return template.FuncMap{
 		"body": func(data []byte) template.HTML {
@@ -105,7 +115,7 @@ func post(c *stdapi.Context) error {
 		"Active":      "blog",
 		"Post":        p,
 		"Title":       p.Title,
-		"URL":         fmt.Sprintf("https://%s/blog/%s", c.Request().Host, p.Slug),
+		"URL":         fmt.Sprintf("https://%s/blog/%s", coalesce(c.Header("X-Forwarded-Host"), c.Request().Host), p.Slug),
 		"Description": p.Description,
 		"OgImage":     p.OgImage,
 		"Tags":        p.Tags,

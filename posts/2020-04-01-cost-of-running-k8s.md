@@ -2,7 +2,7 @@
 title: The True Cost of Running Kubernetes in the Cloud
 author: Cameron Gray
 twitter: camerondgray
-tags: [Convox, AWS, EKS, Google Cloud, GCP, Digital Ocean, Azure, Kubernetes, Cloud Costs, Kuberentes Cost]
+tags: [Convox, AWS, EKS, Google Cloud, GCP, Digital Ocean, Azure, Kubernetes, Cloud Costs, Kubernetes Cost]
 description: What does it really cost to run a kubernetes cluster on different clouds.
 ---
 

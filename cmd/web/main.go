@@ -33,6 +33,7 @@ func run() error {
 	s.Route("GET", "/", page)
 	s.Route("GET", "/blog", blog)
 	s.Route("GET", "/blog/{slug}", post)
+	s.Route("GET", "/blog/{slug}/", post)
 	s.Route("GET", "/{slug}", page)
 
 	stdapi.LoadTemplates(packr.NewBox("../../pages"), helpers)
